@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Puritan:ital,wght@0,400;0,700;1,400;1,700&family=Sarala:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ColorPalette Dark */
+  --dm-main-bg-color: hsl(208, 81%, 4%, 100%);
+  --dm-secondary-color:hsl(43, 24%, 62%);
+  --dm-secondary-color-alt:#B3A394;
+   --dm-third-color: #275e74;
+    --dm-glow-color: hsl(194, 48%, 12%);
+  --dm-alt-color-1: #C0DDEF;
+  --dm-alt-color-2:#429EA6;
+  --dm-alt-color-3:#2E86AB;
+  --dm-alt-color-4:#70D6FF;
+  --dm-alt-color-5:#EA526F;
+  --dm-alt-color-6:#9893DA;
+  --dm-alt-color-7:#C7B8EA;
+  --dm-alt-color-8:#6F5E5C;
+  --dm-alt-color-9:#7B5E7B;
+
+/* ColorPalette Light */
+  /* --lm-main-bg-color: #B1B2B3; */
+    --lm-main-bg-color: #AEB3B5;
+  --lm-secondary-color: #212121;
+  --lm-third-color:#DBFE87;
+  --lm-third-color-alt1:#AFFC41;
+  --lm-third-color-alt2:#61FF7E;
+  --lm-glow-color: #E7E7E8;
+
+  --text-main-header: 'Montserrat', 'sans-serif';
+  --text-secondary-header: 'Puritan', 'sans-serif';
+  --text-main-body: 'Sarala', 'sans-serif';
+}
+
+body {
+  background: var(--bkg-color);
+  color: var(--text-color);
+  font-family: var(--text-main-body);
+}
+a {
+  color: var(--anchor-color);
+}
+
+/* Default colors */
+body {
+  --bkg-color: var(--lm-main-bg-color);
+  --text-color: var(--lm-secondary-color);
+}
+/* Dark theme colors */
+body.dark-theme {
+  /* --text-color: #347d99; */
+  --bkg-color: var(--dm-main-bg-color);
+  --text-color: var(--dm-secondary-color);
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body { 
+    --bkg-color: var(--dm-main-bg-color);
+    --text-color: var(--dm-secondary-color);
+  }
+  /* Override dark mode with light mode styles if the user decides to swap */
+  body.light-theme {
+    --bkg-color: var(--lm-main-bg-color);
+    --text-color: var(--lm-secondary-color);
+  }
+}
+
+.btn-dark {
+/* color: #70d6ff; */
+color: var( --dm-third-color);
+}
+
+.btn-dark:hover{
+color: var(--dm-secondary-color);
+border-color: var(--dm-third-color);
+background-color: var(--dm-third-color);
+}
+
+.btn-light {
+color: var(--lm-third-color);
+}
+
+.btn-light:hover {
+  color: var(--lm-main-bg-color);
+  border-color: var(--lm-third-color);
+  background-color: var(--lm-third-color);;
+}
+
+/*
+NEEDED FOR TEXT WITH MOVING (GIF) BACKGROUND
+Add gif as div background, put text layer on top and add these css attributes to the text
+-webkit-text-fill-colo:transparent;
+-webkit-background-clip:text;*/
+
+/*Glow Fade-In*/
+
+@keyframes glow-on-scroll {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .glow-animation {
+    animation-name: glow-on-scroll;
+    animation-delay: 8s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+
+  }
+
+/*Drawing Fade-Out*/
+
+@keyframes drawing-fade-out {
+  0% {
+    opacity: 100%;
+  }
+  50%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+  }
+}
+
+.drawing-animation {
+  animation-name: drawing-fade-out;
+  animation-duration: 11s;
+  animation-fill-mode: both;
+  }
+
+/*Portrait Fade-In*/
+
+@keyframes portrait-fade-in {
+  0% {
+    opacity: 0%;
+  }
+  50%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 100%;
+  }
+}  
+
+  .portrait-animation {
+    animation-name: portrait-fade-in;
+    animation-delay: 5s;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+  }
+}
+
+/*Link-Buttons Fade-Out*/
+
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+  }
+  
+  100%{
+    opacity: 0%;
+  }
+}  
+
+  .linkButton-fade-out-animation {
+    animation-name: fade-out;
+    animation-delay: 7s;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+  }
+
+  /*Link-Buttons Fade-In*/
+
+@keyframes fade-in {
+  0% {
+    opacity: 0%;
+  }
+  
+  100%{
+    opacity: 100%;
+  }
+}  
+
+  .linkButton-fade-in-animation {
+    animation-name: fade-in;
+    animation-delay: 8.5s;
+    animation-duration: 4s;
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    animation-name: fade-in;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+  }
+
+  .card-text-cutoff {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+
+  .marquee {
+  animation: marquee 5s linear infinite;
+}
+
+.marquee2 {
+  animation: marquee2 5s linear infinite;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
