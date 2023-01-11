@@ -15,7 +15,7 @@ export const projects = [
         techstack_front: ["React", "Tailwind CSS", "Daisy UI", "Netlify"],
         techstack_back: ["Node.js", "Express.js", "MongoDB", "AWS S3", "Railway"],
         page_url: "https://superlative-dieffenbachia-8c430f.netlify.app/",
-        repo_url: "https://github.com/JensMatthiaschk/bici-frontend",
+        // repo_url: "https://github.com/JensMatthiaschk/bici-frontend",
         contributors: [
             {
                 name: "Fabian Eichelbrönner",

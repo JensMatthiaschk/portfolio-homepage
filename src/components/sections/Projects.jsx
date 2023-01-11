@@ -123,8 +123,8 @@ export default function Projects() {
                         Show Others</button>}
                     {otherProjectsVisible &&
                         <div className="fade-in flex h-full w-full gap-6 flex-wrap justify-center mt-5 sm:mx-10 px-4 mb-10">
-                            <div className="text-center my-5 text-xl mb-10 w-full">
-                                <p className="w-[60%] mx-auto">Since I'm at a very early stage of my newly started developer career, my list of projects is too. But since I spend lots of time in the bootcamp working on group projects I wanted to share those along with the awesome people I've met during that class.</p>
+                            <div className="text-center my-5 sm:text-xl mb-10 w-full">
+                                <p className="sm:w-[60%] mx-auto">Since I'm at a very early stage of my newly started developer career, my list of projects is too. But since I spend lots of time in the coding bootcamp working on group projects I wanted to share those along with the awesome people I've met during that class.</p>
                             </div>
                             {otherProjects.map((p, i) => {
 
