@@ -93,7 +93,7 @@ export default function Experience() {
                                 : "w-full h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"}>
                                 <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center">
                                     <h3 className="font-extrabold text-xl">{e.title}</h3>
-                                    {e.location ? <h4>{e.school}, {e.location}</h4> : <h4>{e.school}</h4>}
+                                    {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}</h4>}
                                     <p>{e.time_period}</p>
                                 </div>
                                 <div className={currentTheme === 'dark' ? "border-dotted sm:border-l-4 sm:border-t-0 border-t-4 border-[var(--dm-secondary-color)] sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "border-dotted sm:border-l-4 sm:border-t-0 border-t-4 border-[var(--lm-secondary-color)] sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly"}>
@@ -112,7 +112,7 @@ export default function Experience() {
                                 : "w-full h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"}>
                                 <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center">
                                     <h3 className="font-extrabold text-xl">{e.position}</h3>
-                                    {e.location ? <h4>{e.company}, {e.location}</h4> : <h4>{e.company}</h4>}
+                                    {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.company}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>{e.company}</h4>}
                                     <p>{e.time_period}</p>
                                 </div>
                                 <div className={currentTheme === 'dark' ? "border-dotted sm:border-l-4 border-t-4 sm:border-t-0 border-[var(--dm-secondary-color)] sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "border-dotted sm:border-l-4 border-t-4 sm:border-t-0 border-[var(--lm-secondary-color)] sm:ml-5 mt-4 pt-4 sm:mt-0 sm:pl-8 flex flex-col sm:w-8/12 w-full justify-evenly"}>

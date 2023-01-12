@@ -20,8 +20,8 @@ export default function About() {
             >
                 <h3 className="font-['Montserrat'] md:text-3xl sm:text-2xl text-xl">Hi, I'm</h3>
                 <h1 className="font-['Montserrat'] md:text-8xl sm:text-5xl text-4xl font-extrabold w-auto">Jens Matthiaschk</h1>
-                <h3 className="font-['Montserrat'] md:text-6xl sm:text-4xl text-2xl md:mt-5 mt-2">Web Developer</h3>
-                <p className="text-sm sm:text-base my-8 font-['Montserrat'] font-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, quidem libero! Nobis numquam maxime aperiam. Sed quam, fugiat, facilis libero assumenda fuga impedit vitae laborum explicabo pariatur soluta voluptatum perspiciatis.</p>
+                <h3 className="font-['Montserrat'] md:text-6xl sm:text-4xl text-2xl md:mt-5 mt-2">web developer</h3>
+                <p className="text-sm sm:text-base my-8 font-['Montserrat'] font-medium">I love to built things for the web but more importantly for people. New technologies are supposed to help so I focus on dynamic aesthetics and intuitive Interfaces equally. </p>
                 <div className="md:mt-10 sm:mt-8 mt-5 flex sm:flex-row flex-col gap-y-3">
                     <Link to="Projects" spy={true} smooth={true} offset={0} duration={500}>
                         <button className={currentTheme === 'dark' ? "badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark hover:drop-shadow-[0_0_10px_var(--dm-third-color)] mr-3" : "badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] mr-3"}>

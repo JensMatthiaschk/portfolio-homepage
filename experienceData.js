@@ -2,7 +2,7 @@ export const professionalExperience = [
     {
         position: "Junior Production Manager, Production Coordinator, Assistant - / Shipping Coordinator",
         company: "Various",
-        location: "Berlin",
+        location: "Berlin & Potsdam",
         time_period: "09/2010 -01/2022",
         description: "Before I switched careers I worked in the film industry for over 10 years. I coordinated daily operations in the production office for various international movie and show productions and specialized in logistics on domestic shoots & abroad."
     },
