@@ -43,14 +43,14 @@ export default function Contact() {
             setContactVisitedLight(1)
 
         }
-    }, [counterLight, counterDark])
+    }, [drawingIsVisible])
 
     console.log("contactVisitedDark", contactVisitedDark)
     console.log("contactVisitedLight", contactVisitedLight)
 
     return (
         <>
-            <section id="Contact" ref={drawingRef} className="flex flex-col justify-between sm:h-[60rem] h-[46rem] lg:mx-10 soverflow-hidden">
+            <section id="Contact" ref={drawingRef} className="flex flex-col justify-between sm:h-[60rem] h-[46rem] lg:mx-10 overflow-hidden">
                 <div ref={contactRef} className={contactIsVisible ? "fade-in sm:mt-20 mt-12 sm:ml-10 px-10 sm:text-2xl text-md font-['Montserrat'] text-center font-medium lg:w-[70%] lg:mx-auto" : "sm:mt-20 mt-12 sm:ml-10 px-10 sm:text-2xl text-xl font-['Montserrat'] invisible text-right font-medium"}>
                     <h1 className={currentTheme === 'dark' ? "text-3xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] sm:mb-10 mb-3"
                         : "text-3xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] sm:mb-10 mb-3"}>
