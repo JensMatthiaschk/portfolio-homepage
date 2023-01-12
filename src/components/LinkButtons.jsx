@@ -12,11 +12,11 @@ export default function LinkButtons() {
             <div className={
                 sectionActive === 'Contact' && contactVisitedDark === 0 && currentTheme === 'dark' ? "linkButton-fade-out-animation sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all z-30" :
                     sectionActive === 'Contact' && contactVisitedLight === 0 && currentTheme === 'light' ? "linkButton-fade-out-animation sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all z-30" :
-                        sectionActive === 'Contact' && contactVisitedDark !== 0 && currentTheme === 'dark' ? "fade-out sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all" :
-                            sectionActive === 'Contact' && contactVisitedLight !== 0 && currentTheme === 'light' ? "fade-out sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all" :
-                                "sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all"
+                        sectionActive === 'Contact' && contactVisitedDark !== 0 && currentTheme === 'dark' ? "fade-out sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all z-30" :
+                            sectionActive === 'Contact' && contactVisitedLight !== 0 && currentTheme === 'light' ? "fade-out sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all z-30" :
+                                "sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30"
             }>
-                <ul className={currentTheme === 'dark' ? "text-[var(--dm-secondary-color)] " : "text-[var(--lm-secondary-color)] "} >
+                <ul className={currentTheme === 'dark' ? "text-[var(--dm-secondary-color)]" : "text-[var(--lm-secondary-color)] "} >
                     <li className={currentTheme === 'dark' ? "hover:text-[var(--dm-third-color)]" : ""}>
                         <a href="https://github.com/JensMatthiaschk"
                             target="_newBrowserTab"
