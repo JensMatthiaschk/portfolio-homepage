@@ -14,7 +14,7 @@ export const educationAndTraining = [
         school: "WBS Coding School",
         location: "Berlin",
         time_period: "08/2022 - 12/2022",
-        description: "15 weeks intensive full-time, project based, practice orientated, remote, collaborative coding training, including HTML5, CSS3 and Responsive Web Design Frontend programming with JavaScript / React, Backend Programming with Node.js (Express), Version Control Systems (Git & GitHub) Databases (SQL, NoSQL), Restful API's, DevOps (Hosting, Deployment, Monitoring) Software Testing (TDD), Agile tools and methodologies"
+        description: "15 weeks intensive full-time, project based, practice orientated, remote, collaborative coding training, including HTML5, CSS3 and Responsive Web Design, Frontend programming with JavaScript / React, Backend Programming with Node.js (Express), Version Control Systems (Git & GitHub), Databases (SQL, NoSQL), Restful API's, DevOps (Hosting, Deployment, Monitoring), Software Testing (TDD), Agile tools and methodologies"
     },
     {
         title: "Digital Job Compass",
@@ -23,18 +23,18 @@ export const educationAndTraining = [
         time_period: "07/2022 – 08/2022",
         description: "Practical & theoretical training for the purpose of orientation in Web Development, Data Analysis, UI/ UX Design, Online Marketing."
     },
-    // {
-    //     title: "Production Manager Film & Television (IHK)",
-    //     school: "Institut für Schauspiel, Film-, Fernsehberufe an der VHS Berlin Mitte",
-    //     location: "Berlin",
-    //     time_period: "11/2017 – 02/2018",
-    //     description: ""
-    // },
+    {
+        title: "Production Manager Film & Television (IHK)",
+        school: "Institut für Schauspiel, Film-, Fernsehberufe an der VHS Berlin Mitte & Chamber of Commerce Berlin",
+        location: "Berlin",
+        time_period: "11/2017 – 02/2018",
+        description: "Practical & theoretical training for the purpose of preperation for the profession of production management film & television including a final test at the chamber of commerce. The training included professional insights in the responsibilities project planning, financing, organization, execution of shooting, post-production, distribution and sales. In addition the course covered topics such like international film financing, sales strategies and co-productions, current developments on the media market, technical innovations and new media offerings as well as modern negotiation and communication."
+    },
     {
         title: "B.A. Media and Communication",
         school: "University of Passau",
         location: "",
         time_period: "10/2006 – 06/2010",
-        description: ""
+        description: "The programme teached core competencies in media studies, including film and television research, media psychology, media education, media informatics and communication studies as well as insights into practical media production (e.g. print, audio-visual and online media, transmedia storytelling)."
     },
 ]

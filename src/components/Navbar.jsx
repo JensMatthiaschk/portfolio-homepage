@@ -77,7 +77,7 @@ export default function Navbar() {
                         </ul>
                     </div>
                 </div>
-                <div className="navbar-end hidden lg:flex lg:w-screen">
+                <div className="navbar-end hidden lg:flex lg:w-screen z-40">
                     <ul className="menu menu-horizontal px-1">
                         <li><Link to="About" spy={true} smooth={true} offset={50} duration={500}>About</Link></li>
                         <li><Link to="Experience" spy={true} smooth={true} offset={0} duration={500}>Experience</Link></li>

@@ -5,7 +5,7 @@ import EmailModal from "../EmailModal.jsx";
 
 export default function Contact() {
 
-    const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
+    const { currentTheme, setCurrentTheme, sectionActive, setSectionActive, contactVisitedLight, setContactVisitedLight, contactVisitedDark, setContactVisitedDark } = useContext(ThemeContext)
     const { ref: drawingRef, inView: drawingIsVisible } = useInView({ threshold: 0.5 });
     const { ref: contactRef, inView: contactIsVisible } = useInView({ threshold: 0 });
     const [drawingSource, setDrawingSource] = useState('')
@@ -15,8 +15,8 @@ export default function Contact() {
     const year = new Date().getFullYear()
 
     // console.log("drawingIsVisible", drawingIsVisible)
-    // console.log("COUNTERLIGHT", counterLight)
-    // console.log("COUNTERDARK", counterDark)
+    console.log("COUNTERLIGHT", counterLight)
+    console.log("COUNTERDARK", counterDark)
 
     useEffect(() => {
         setDrawingSource('')
@@ -35,6 +35,19 @@ export default function Contact() {
         else setDrawingSource('')
     }, [drawingIsVisible, currentTheme])
 
+    useEffect(() => {
+        if (currentTheme === 'dark' && counterDark === 1) {
+            setContactVisitedDark(1)
+        }
+        else if (currentTheme === 'light' && counterLight === 1) {
+            setContactVisitedLight(1)
+
+        }
+    }, [drawingIsVisible])
+
+    console.log("contactVisitedDark", contactVisitedDark)
+    console.log("contactVisitedLight", contactVisitedLight)
+
     return (
         <>
             <section id="Contact" ref={drawingRef} className="flex flex-col justify-between h-screen lg:mx-10 soverflow-hidden">
@@ -49,12 +62,12 @@ export default function Contact() {
                     <div className={currentTheme === "dark" ? "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}>New Technologies</div>
                     <div className={currentTheme === "dark" ? "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}>Random <p className="w-fit hover:line-through px-2 ease-in-out delay-100 duration-300"> tech </p> topics</div>
                     <div className={currentTheme === "dark" ? "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--lm-third-color)] ease-in-out delay-50 duration-300"} >Burgers</div>
-                    <div className={currentTheme === "dark" ? "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}>Cocktail Recipes</div>
+                    <div className={currentTheme === "dark" ? "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase hover:text-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}><p className="w-fit hover:line-through pr-2 ease-in-out delay-100 duration-300"> Cocktail </p> Recipes</div>
                     <span className="mr-2 w-fit"> let's have a chat!</span>
                 </div>
                 {drawingIsVisible ?
                     <div className="h-screen flex flex-col justify-end">
-                        <ul className="linkButton-fade-in-animation flex flex-col md:flex-row sm:flex-wrap gap-4 sm:gap-6 items-start w-full relative md:bottom-32 bottom-28 sm:pl-16 pl-14 mr- z-30">
+                        <ul className={(currentTheme === 'dark' && contactVisitedDark === 0) || (currentTheme === 'light' && contactVisitedLight === 0) ? "linkButton-fade-in-animation flex flex-col md:flex-row sm:flex-wrap gap-4 sm:gap-6 items-start w-full relative md:bottom-32 bottom-28 sm:pl-16 pl-14 mr- z-30" : "fade-in flex flex-col md:flex-row sm:flex-wrap gap-4 sm:gap-6 items-start w-full relative md:bottom-32 bottom-28 sm:pl-16 pl-14 mr- z-30"}>
                             <li>
                                 <a href="https://github.com/JensMatthiaschk"
                                     target="_newBrowserTab"
@@ -125,14 +138,15 @@ export default function Contact() {
                                 </a>
                             </li>
                         </ul>
-                        <div className="linkButton-fade-in-animation flex flex-col sm:text-sm text-[0.5rem] w-38 relative sm:bottom-5 bottom-2 sm:ml-10 ml-3">
+                        <div className={(currentTheme === 'dark' && contactVisitedDark === 0) || (currentTheme === 'light' && contactVisitedLight === 0) ? "linkButton-fade-in-animation flex flex-col sm:text-sm text-[0.5rem] w-38 relative sm:bottom-5 bottom-2 sm:ml-10 ml-3" : "fade-in flex flex-col sm:text-sm text-[0.5rem] w-38 relative sm:bottom-5 bottom-2 sm:ml-10 ml-3"}>
                             <p>Jens Matthiaschk © {year}</p>
-                            <p>Drawing by ai-draw.tokyo</p>
+                            <p className={(currentTheme === 'dark' && contactVisitedDark === 0) || (currentTheme === 'light' && contactVisitedLight === 0) ? "linkButton-fade-in-animation" : "hidden"}>Drawing by ai-draw.tokyo</p>
                         </div>
                     </div>
                     : ""}
                 <div className="flex justify-end items-end">
-                    {drawingIsVisible ?
+                    {(contactVisitedDark === 0 && currentTheme === 'dark') || (contactVisitedLight === 0 && currentTheme === 'light') ?
+                        drawingIsVisible &&
                         <>
                             <div
                                 className={currentTheme === 'dark' ? 'glow-animation sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] absolute sm:mr-44 mr-24 sm:mb-48 mb-32 rounded-full bg-[var(--dm-glow-color)] sm:shadow-[0_0_140px_130px_var(--dm-glow-color)] shadow-[0_0_90px_70px_var(--dm-glow-color)]' : 'glow-animation sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] absolute sm:mr-44 mr-24 sm:mb-48 mb-32 rounded-full bg-[var(--lm-glow-color)] sm:shadow-[0_0_140px_130px_var(--lm-glow-color)] shadow-[0_0_90px_70px_var(--lm-glow-color)]'}
@@ -140,11 +154,19 @@ export default function Contact() {
                             <img className={currentTheme === 'dark' ? "portrait-animation sm:h-[24rem] h-[12rem] z-10 absolute sm:mr-6 mr-2" : "portrait-animation sm:h-[24rem] h-[12rem] z-10 absolute sm:mr-5 mr-2"}
                                 src={portraitSource} alt="PortraitDarkmode" />
                         </>
-                        : ""
+                        :
+                        drawingIsVisible &&
+                        <>
+                            <div
+                                className={currentTheme === 'dark' ? 'glow-fade-in sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] absolute sm:mr-44 mr-24 sm:mb-48 mb-32 rounded-full bg-[var(--dm-glow-color)] sm:shadow-[0_0_140px_130px_var(--dm-glow-color)] shadow-[0_0_90px_70px_var(--dm-glow-color)]' : 'glow-fade-in sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] absolute sm:mr-44 mr-24 sm:mb-48 mb-32 rounded-full bg-[var(--lm-glow-color)] sm:shadow-[0_0_140px_130px_var(--lm-glow-color)] shadow-[0_0_90px_70px_var(--lm-glow-color)]'}
+                            ></div>
+                            <img className={currentTheme === 'dark' ? "fade-in sm:h-[24rem] h-[12rem] z-10 absolute sm:mr-6 mr-2" : "fade-in sm:h-[24rem] h-[12rem] z-10 absolute sm:mr-5 mr-2"}
+                                src={portraitSource} alt="PortraitDarkmode" />
+                        </>
                     }
                     {/* DRAWING */}
-                    {currentTheme === 'dark' ? <img className={`${drawingIsVisible ? "drawing-animation sm:h-[24rem] sm:w-[27.3rem] h-[12rem] w-[13.8rem] sm:mr-3 z-20 absolute" : "sm:h-[24rem] sm:w-[27.3rem] h-[12rem] w-[13.8rem] sm:mr-3 z-20 absolute invisible"}`} src={`${drawingIsVisible ? drawingSource : ""}`} />
-                        : <img className={`${drawingIsVisible ? "drawing-animation sm:h-[24.3rem] sm:w-[29.9rem] h-[12rem] w-[14.8rem] z-20 absolute" : "m:h-[24.3rem] sm:w-[29.9rem] h-[12rem] w-[14.8rem] z-20 absolute invisible"}`} src={`${drawingIsVisible ? drawingSource : ""}`} />}
+                    {currentTheme === 'dark' ? <img className={`${drawingIsVisible && contactVisitedDark === 0 ? "drawing-animation sm:h-[24rem] sm:w-[27.3rem] h-[12rem] w-[13.8rem] sm:mr-3 z-20 absolute" : "sm:h-[24rem] sm:w-[27.3rem] h-[12rem] w-[13.8rem] sm:mr-3 z-20 absolute hidden"}`} src={`${drawingIsVisible ? drawingSource : ""}`} />
+                        : <img className={`${drawingIsVisible && contactVisitedLight === 0 ? "drawing-animation sm:h-[24.3rem] sm:w-[29.9rem] h-[12rem] w-[14.8rem] z-20 absolute" : "sm:h-[24.3rem] sm:w-[29.9rem] h-[12rem] w-[14.8rem] z-20 absolute hidden"}`} src={`${drawingIsVisible ? drawingSource : ""}`} />}
                 </div>
             </section>
         </>

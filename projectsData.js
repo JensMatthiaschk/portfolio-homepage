@@ -30,16 +30,16 @@ export const projects = [
 ]
 
 export const otherProjects = [
-    
+
     {
         img_url: "",
         title: "Poke Fight",
-        description: ".",
+        description: "The Pokemon API offers a good collection of all pokemons which was the foundation for this exercise to create a pokemon game. Storing the data in an own database and backend server and building an interface with some game logic for the frontend was a good first full-stack challenge.",
         techstack_front: ["React", "Tailwind CSS"],
         techstack_back: ["Node.js", "Express.js"],
         page_url: "",
         repo_url: "https://github.com/kaybee24/Pokefight-React-Frontend",
-        contributors: [ 
+        contributors: [
             {
                 name: "Katrin Baier",
                 github_url: "https://github.com/kaybee24"
@@ -49,7 +49,7 @@ export const otherProjects = [
                 github_url: "https://github.com/Saminf90"
             },
             {
-                name: "Fiachra Mac Cóil",
+                name: "Micheál Fiachra Mac Cóil",
                 github_url: "https://github.com/Tuffisoft"
             },
         ]
@@ -57,7 +57,7 @@ export const otherProjects = [
     {
         img_url: "",
         title: "Travel Blog",
-        description: "",
+        description: "In this project we got introduced to Content Management Systems (CMS) which we used to create dummy travel destination content and fetch it in our frontend from the API provided by the CMS. Later we stored the contentful data on our own PostgreSQL database. We used React Router and more advanced hooks like useParams and useContext.",
         techstack_front: ["React", "Tailwind CSS", "Daisy UI"],
         techstack_back: ["Node.js", "Express.js", "PostgreSQL"],
         page_url: "",
@@ -76,8 +76,8 @@ export const otherProjects = [
     {
         img_url: "",
         title: "Hacker News",
-        description: "The hacker news API provided the data for this group project. Fortunately the original hacker news page gives a lot of room for design improvement which motivated us to build a more appealing interface. It was a great exercise to dive deeper into React Hook(UseState, UseEffect) and Props.",
-        techstack_front: ["React", "Tailwind CSS", "Daisy UI"],
+        description: "The hacker news API provided the data for this group project. Fortunately the original hacker news page gives a lot of room for design improvement which motivated us to build a more appealing interface. It was a great exercise to dive deeper into React Hooks (UseState, UseEffect), Props and Fetch.",
+        techstack_front: ["React", "JavaScript", "Bulma"],
         techstack_back: [],
         page_url: "",
         repo_url: "https://github.com/Saminf90/hacker-news",
@@ -99,7 +99,7 @@ export const otherProjects = [
     {
         img_url: "",
         title: "Memory Lane",
-        description: "The idea behind our first React group project was to build a website where people can preserve their memories and experiences for following generations and visualize them with photos from that corresponding time. Defintely worth continue working on.",
+        description: "The idea behind our first React group project was to build a website where people can preserve their memories and experiences for following generations and visualize them with photos from that corresponding time.",
         techstack_front: ["React", "JavaScript", "Bootstrap"],
         techstack_back: [],
         page_url: "",
@@ -118,7 +118,7 @@ export const otherProjects = [
     {
         img_url: "",
         title: "Cook Book",
-        description: "A simple web application displaying cooking recipes.",
+        description: "A simple web application displaying cooking recipes. Our first exercise to get familiar with HTML architecture and CSS",
         techstack_front: ["HTML", "CSS", "JavaScript"],
         techstack_back: [],
         page_url: "",

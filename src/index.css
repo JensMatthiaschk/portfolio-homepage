@@ -8,6 +8,7 @@
   --dm-main-bg-color: hsl(208, 81%, 4%, 100%);
   --dm-secondary-color:hsl(43, 24%, 62%);
   --dm-secondary-color-alt:#B3A394;
+    --dm-secondary-color-alt-2:hsl(44, 16%, 42%);
    --dm-third-color: #275e74;
     --dm-glow-color: hsl(194, 48%, 12%);
   --dm-alt-color-1: #C0DDEF;
@@ -177,6 +178,12 @@ Add gif as div background, put text layer on top and add these css attributes to
     animation-fill-mode: both;
   }
 
+  .fade-out {
+    animation-name: fade-out;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+  }
+
   /*Link-Buttons Fade-In*/
 
 @keyframes fade-in {
@@ -187,7 +194,8 @@ Add gif as div background, put text layer on top and add these css attributes to
   100%{
     opacity: 100%;
   }
-}  
+} 
+
 
   .linkButton-fade-in-animation {
     animation-name: fade-in;
@@ -198,8 +206,28 @@ Add gif as div background, put text layer on top and add these css attributes to
 
   .fade-in {
     animation-name: fade-in;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-fill-mode: both;
+  }
+
+
+
+  @keyframes glow-fade-in {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+
+ .glow-fade-in {
+    animation-name: glow-fade-in;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+
   }
 
   .card-text-cutoff {
@@ -208,32 +236,3 @@ Add gif as div background, put text layer on top and add these css attributes to
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
   }
-
-
-  .marquee {
-  animation: marquee 5s linear infinite;
-}
-
-.marquee2 {
-  animation: marquee2 5s linear infinite;
-  position: absolute;
-  top: 0;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes marquee2 {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}

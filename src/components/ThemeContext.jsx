@@ -6,6 +6,9 @@ export const ThemeContextProvider = (props) => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     const [currentTheme, setCurrentTheme] = useState()
     const [sectionActive, setSectionActive] = useState()
+    const [contactVisitedLight, setContactVisitedLight] = useState(0)
+    const [contactVisitedDark, setContactVisitedDark] = useState(0)
+
 
     useEffect(() => {
         const localTheme = localStorage.getItem("theme");
@@ -22,7 +25,9 @@ export const ThemeContextProvider = (props) => {
     return (
         <ThemeContext.Provider value={{
             currentTheme, setCurrentTheme,
-            sectionActive, setSectionActive
+            sectionActive, setSectionActive,
+            contactVisitedLight, setContactVisitedLight,
+            contactVisitedDark, setContactVisitedDark
         }}>
             {props.children}
         </ThemeContext.Provider>
