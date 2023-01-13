@@ -161,8 +161,8 @@ export default function Contact() {
                                     src={portraitSource} alt="PortraitDarkmode" />
                             </>
                         }
-                        {currentTheme === 'dark' ? <img className={drawingIsVisible && contactVisitedDark === 0 ? "drawing-animation sm:h-[24.2rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2" : "invisible sm:h-[24.2rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2"} src={`${drawingIsVisible ? drawingSource : ""}`} />
-                            : <img className={drawingIsVisible && contactVisitedLight === 0 ? "drawing-animation sm:h-[24.3rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2" : "invisible sm:h-[24.3rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2"} src={`${drawingIsVisible ? drawingSource : ""}`} />}
+                        {currentTheme === 'dark' ? <img className={drawingIsVisible && contactVisitedDark === 0 ? "drawing-animation sm:h-[24.2rem] h-[12.2rem] max-w-fit z-20 absolute -bottom-[0.1rem] sm:right-5 right-[0.3rem]" : "invisible sm:h-[24.2rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2"} src={`${drawingIsVisible ? drawingSource : ""}`} />
+                            : <img className={drawingIsVisible && contactVisitedLight === 0 ? "drawing-animation sm:h-[24.3rem] h-[12.3rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-[0.2rem]" : "invisible sm:h-[24.3rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2"} src={`${drawingIsVisible ? drawingSource : ""}`} />}
                     </div>
                     {/* <div className="flex absolute right-0 bottom-0 w-[50%]">
                             {(contactVisitedDark === 0 && currentTheme === 'dark') || (contactVisitedLight === 0 && currentTheme === 'light') ?
