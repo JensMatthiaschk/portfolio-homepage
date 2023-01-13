@@ -14,7 +14,7 @@ export default function LinkButtons() {
                     sectionActive === 'Contact' && contactVisitedLight === 0 && currentTheme === 'light' ? "linkButton-fade-out-animation sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all z-30 hidden" :
                         sectionActive === 'Contact' && contactVisitedDark !== 0 && currentTheme === 'dark' ? "fade-out sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all z-30 hidden" :
                             sectionActive === 'Contact' && contactVisitedLight !== 0 && currentTheme === 'light' ? "fade-out sm:flex flex-col items-start justify-center h-full fixed mx-5 sm:transition-all z-30 hidden" :
-                                "sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden"
+                                "sm:flex flex-col items-start justify-center h-full fixed mx-5 pb-20 mt-10 sm:transition-all z-30 hidden"
             }>
                 <ul className={currentTheme === 'dark' ? "text-[var(--dm-secondary-color)]" : "text-[var(--lm-secondary-color)] "} >
                     <li className={currentTheme === 'dark' ? "hover:text-[var(--dm-third-color)]" : ""}>

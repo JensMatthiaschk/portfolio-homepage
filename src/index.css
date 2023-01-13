@@ -233,6 +233,13 @@ Add gif as div background, put text layer on top and add these css attributes to
   .card-text-cutoff {
     display: -webkit-box;
     overflow: hidden;
+    text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+    height: 6.5rem;
+  }
+
+  .card-text-cutoff > p {
+    margin-bottom: 0;
+    padding-bottom:0;
   }

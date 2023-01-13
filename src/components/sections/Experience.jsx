@@ -6,7 +6,7 @@ import { educationAndTraining, professionalExperience } from "../../../experienc
 export default function Experience() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.25 })
+    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.1 })
     const { ref: skillsRef, inView: skillsIsVisible } = useInView({ threshold: 0 })
     const { ref: educationTrainingRef, inView: educationTrainingIsVisible } = useInView({ threshold: 0 })
     const { ref: professionalExperienceRef, inView: professionalExperienceIsVisible } = useInView({ threshold: 0 })
@@ -19,7 +19,7 @@ export default function Experience() {
 
     return (
         <>
-            <section id="Experience" ref={experienceRef} className="flex flex-col h-fit justify-evenly items-center mb-20 sm:mx-16">
+            <section id="Experience" ref={experienceRef} className="flex flex-col h-fit items-center mb-20 sm:mx-16">
                 <div>
                     <div className="h-32 w-full transparent ml-10">
                         <h3 className={currentTheme === 'dark' ? "text-4xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2"

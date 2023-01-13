@@ -8,7 +8,7 @@ import { useInView } from 'react-intersection-observer';
 function App() {
 
   return (
-    <div className="App w-full overflow-hidden">
+    <div className="App overflow-hidden">
       <Navbar />
       <About />
       <Experience />
