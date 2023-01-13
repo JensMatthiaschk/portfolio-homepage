@@ -7,7 +7,7 @@ import { projects, otherProjects } from "../../../projectsData.js"
 export default function Projects() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.25 })
+    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 })
     const { ref: cardRef, inView: cardIsVisible } = useInView({ threshold: 0 })
     const [otherProjectsVisible, setOtherProjectsVisible] = useState(false)
     const [openState, setOpenState] = useState(false)
@@ -46,8 +46,8 @@ export default function Projects() {
 
 
                             return (
-                                <div key={i} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 "
-                                    : "card max-w-[20rem] h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300"}>
+                                <div key={i} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mb-10"
+                                    : "card max-w-[20rem] h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300 mb-10"}>
                                     <figure className="h-[11.1rem] m-[0.4rem] rounded">
                                         <img src={p.img_url} alt={`Project-${i + 1}`} />
                                     </figure>
@@ -117,11 +117,11 @@ export default function Projects() {
                     {otherProjectsVisible ?
                         <button
                             onClick={openOtherProjects}
-                            className={currentTheme === "dark" ? "hide-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] mt-10" : "hide-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] mt-10 "}>
+                            className={currentTheme === "dark" ? "hide-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] m-3" : "hide-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] m-3 "}>
                             Hide Others</button> :
                         <button
                             onClick={openOtherProjects}
-                            className={currentTheme === "dark" ? "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] mt-10" : "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] mt-10"}>
+                            className={currentTheme === "dark" ? "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] m-3" : "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] m-3"}>
                             Show Others</button>}
                     {otherProjectsVisible &&
                         <div className="fade-in flex h-fit gap-6 flex-wrap justify-center mt-5 mb-10">
