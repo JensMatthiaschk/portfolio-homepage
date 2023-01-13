@@ -21,11 +21,13 @@ export default function Contact() {
     useEffect(() => {
         setDrawingSource('')
         if (currentTheme === 'dark' && drawingIsVisible === true) {
+            setSectionActive('Contact')
             setDrawingSource('images/Drawing_dark_2.gif');
             setPortraitSource('images/PortraitDarkmode.png')
             setCounterDark(prev => prev + 1)
         }
         else if (currentTheme === 'light' && drawingIsVisible === true) {
+            setSectionActive('Contact')
             setDrawingSource('images/Drawing_light_2.gif');
             setPortraitSource('images/PortraitLightmode.png')
             setCounterLight(prev => prev + 1)
@@ -34,8 +36,6 @@ export default function Contact() {
     }, [drawingIsVisible, currentTheme])
 
     useEffect(() => {
-        if (contactIsVisible === true)
-            setSectionActive('Contact')
         if (currentTheme === 'dark' && counterDark >= 1) {
             setContactVisitedDark(1)
         }
