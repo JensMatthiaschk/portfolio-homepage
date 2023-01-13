@@ -29,12 +29,12 @@ export default function Projects() {
 
     return (
         <>
-            <section id="Projects" ref={projectsRef} className="flex flex-col transition-all items-center sm:mx-16">
+            <section id="Projects" ref={projectsRef} className="flex flex-col transition-all items-center sm:mx-16 mx-8">
                 <div className="h-32 w-full transparent ml-20">
                     <h3 className={currentTheme === "dark" ? "text-4xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2" : "text-4xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Projects</h3>
                 </div>
-                <div ref={cardRef} className={cardIsVisible ? "fade-in flex flex-col h-fit sm:mt-20 mt-3 pb-20 px-4 items-center sm:gap-y-16" : "flex flex-col h-full w-full sm:mt-20 mt-3 pb-20 sm:mx-10 px-4 items-center gap-y-16 invisible"}>
-                    <div className="gap-6 flex flex-wrap justify-center w-full px-4">
+                <div ref={cardRef} className={cardIsVisible ? "fade-in flex flex-col sm:mt-20 mt-3 pb-20 items-center sm:gap-y-16" : "flex flex-col sm:mt-20 mt-3 pb-20 items-center gap-y-16 invisible"}>
+                    <div className="gap-6 flex flex-wrap justify-center">
                         {projects.map((p, i) => {
 
                             function toggleMoreText() {
@@ -46,8 +46,8 @@ export default function Projects() {
 
 
                             return (
-                                <div key={i} className={currentTheme === "dark" ? "card w-80 h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200"
-                                    : "card w-80 h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300"}>
+                                <div key={i} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 "
+                                    : "card max-w-[20rem] h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300"}>
                                     <figure className="h-[11.1rem] m-[0.4rem] rounded">
                                         <img src={p.img_url} alt={`Project-${i + 1}`} />
                                     </figure>
@@ -124,7 +124,7 @@ export default function Projects() {
                             className={currentTheme === "dark" ? "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] mt-10" : "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] mt-10"}>
                             Show Others</button>}
                     {otherProjectsVisible &&
-                        <div className="fade-in flex h-full w-full gap-6 flex-wrap justify-center mt-5 sm:mx-10 px-4 mb-10">
+                        <div className="fade-in flex h-fit gap-6 flex-wrap justify-center mt-5 mb-10">
                             <div className="text-center my-5 sm:text-xl mb-10 w-full">
                                 <p className="sm:w-[60%] mx-auto">Since I'm at a very early stage of my newly started developer career, my list of projects is too. But since I spend lots of time in the coding bootcamp working on group projects I wanted to share those along with the awesome people I've met during that class.</p>
                             </div>
@@ -138,8 +138,8 @@ export default function Projects() {
                                 }
 
                                 return (
-                                    <div key={i} className={currentTheme === "dark" ? "card w-80 h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200"
-                                        : "card w-80 h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300"}>
+                                    <div key={i} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200"
+                                        : "card max-w-[20rem] h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300"}>
                                         {p.img_url ? <figure className="h-[11.1rem] m-[0.4rem] rounded">
                                             <img src={p.img_url} alt={`Project-${i + 1}`} />
                                         </figure>

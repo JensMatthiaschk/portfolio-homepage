@@ -19,13 +19,13 @@ export default function Experience() {
 
     return (
         <>
-            <section id="Experience" ref={experienceRef} className="flex flex-col h-fit items-center mb-20 sm:mx-16">
+            <section id="Experience" ref={experienceRef} className="flex flex-col h-fit items-center mb-20 sm:mx-16 mx-8">
                 <div>
                     <div className="h-32 w-full transparent ml-10">
                         <h3 className={currentTheme === 'dark' ? "text-4xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2"
                             : "text-4xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Experience</h3>
                     </div>
-                    <div ref={skillsRef} id="Skills" className={skillsIsVisible ? "fade-in text-center w-full mt-4 sm:mt-28" : "text-center w-full mt-4 sm:mt-28 invisible"}>
+                    <div ref={skillsRef} id="Skills" className={skillsIsVisible ? "flex flex-col items-center fade-in mx-auto mt-4 sm:mt-28" : "text-center mt-4 sm:mt-28 invisible"}>
                         <h3 className={currentTheme === 'dark' ? "text-3xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] mb-6"
                             : "text-3xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] mb-6"}>Skills</h3>
                         <div className="flex sm:gap-x-4 gap-x-2 sm:gap-y-2 px-8 items-center justify-center flex-wrap transition-all">
@@ -85,11 +85,11 @@ export default function Experience() {
                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 46.792969 22.089844 L 27.910156 3.207031 C 27.109375 2.402344 26.054688 2 25 2 C 23.945313 2 22.890625 2.402344 22.089844 3.207031 L 18.355469 6.941406 L 22.976563 11.5625 C 24.511719 10.660156 26.511719 10.855469 27.828125 12.171875 C 29.144531 13.488281 29.335938 15.488281 28.433594 17.019531 L 32.976563 21.5625 C 34.511719 20.660156 36.511719 20.855469 37.828125 22.171875 C 39.390625 23.734375 39.390625 26.265625 37.828125 27.828125 C 36.265625 29.390625 33.734375 29.390625 32.171875 27.828125 C 30.855469 26.511719 30.660156 24.511719 31.5625 22.976563 L 27.019531 18.433594 C 26.695313 18.625 26.355469 18.765625 26 18.855469 L 26 31.140625 C 27.722656 31.585938 29 33.136719 29 35 C 29 37.210938 27.210938 39 25 39 C 22.789063 39 21 37.210938 21 35 C 21 33.136719 22.277344 31.585938 24 31.140625 L 24 18.855469 C 23.332031 18.683594 22.695313 18.351563 22.171875 17.828125 C 20.855469 16.511719 20.664063 14.511719 21.566406 12.980469 L 16.941406 8.355469 L 3.207031 22.089844 C 1.597656 23.695313 1.597656 26.304688 3.207031 27.910156 L 22.089844 46.792969 C 22.890625 47.597656 23.945313 48 25 48 C 26.054688 48 27.109375 47.597656 27.910156 46.792969 L 46.792969 27.910156 C 48.402344 26.304688 48.402344 23.695313 46.792969 22.089844 Z" /></svg>Git</div>
                         </div>
                     </div>
-                    <div ref={educationTrainingRef} className={educationTrainingIsVisible ? "fade-in w-full sm:px-0 px-8 text-center mt-16" : "w-full sm:px-0 px-8 text-center mt-16 invisible"} >
+                    <div ref={educationTrainingRef} className={educationTrainingIsVisible ? "fade-in flex flex-col text-center mx-auto lg:w-[80%] mt-16" : "flex flex-col mx-auto lg:w-[80%] mt-16 invisible"} >
                         <h3 className={currentTheme === 'dark' ? "text-3xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] mb-10"
                             : "text-3xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] mb-10"}>Education & Training</h3>
                         {educationAndTraining.map((e, i) =>
-                            <div key={i} className={currentTheme === "dark" ? "w-full h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
+                            <div key={i} className={currentTheme === "dark" ? "h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
                                 : "w-full h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"}>
                                 <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center">
                                     <h3 className="font-extrabold text-xl">{e.title}</h3>
@@ -104,7 +104,7 @@ export default function Experience() {
                         <div>
                         </div>
                     </div>
-                    <div ref={professionalExperienceRef} className={professionalExperienceIsVisible ? "fade-in w-full sm:px-0 px-8 text-center mt-16" : "w-full sm:px-0 px-8 text-center mt-16 invisible"}>
+                    <div ref={professionalExperienceRef} className={professionalExperienceIsVisible ? "fade-in flex flex-col text-center mx-auto lg:w-[80%] mt-16" : "flex flex-col mx-auto lg:w-[80%] mt-16 invisible"}>
                         <h3 className={currentTheme === 'dark' ? "text-3xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] mb-10"
                             : "text-3xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] mb-10"}>Professional Experience</h3>
                         {professionalExperience.map((e, i) =>
