@@ -153,7 +153,7 @@ Add gif as div background, put text layer on top and add these css attributes to
 
   .portrait-animation {
     animation-name: portrait-fade-in;
-    animation-delay: 5s;
+    animation-delay: 5.5s;
     animation-duration: 3s;
     animation-fill-mode: both;
   }

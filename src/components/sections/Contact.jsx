@@ -147,7 +147,8 @@ export default function Contact() {
                         {(contactVisitedDark === 0 && currentTheme === 'dark' && drawingIsVisible) || (contactVisitedLight === 0 && currentTheme === 'light' && drawingIsVisible) ?
                             <>
                                 <div
-                                    className={currentTheme === 'dark' ? 'glow-animation absolute sm:bottom-[14rem] bottom-[8rem] right-[6rem] sm:right-[11rem] sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] rounded-full bg-[var(--dm-glow-color)] sm:shadow-[0_0_140px_130px_var(--dm-glow-color)] shadow-[0_0_90px_70px_var(--dm-glow-color)]' : 'glow-animation absolute sm:bottom-[14rem] bottom-[8rem] right-[7rem] sm:right-[14rem] sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] rounded-full bg-[var(--lm-glow-color)] sm:shadow-[0_0_140px_130px_var(--lm-glow-color)] shadow-[0_0_90px_70px_var(--lm-glow-color)]'}
+                                    className={currentTheme === 'dark' ? 'glow-animation absolute sm:bottom-[14rem] bottom-[8rem] right-[6rem] sm:right-[11rem] sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] rounded-full bg-[var(--dm-glow-color)] sm:shadow-[0_0_140px_130px_var(--dm-glow-color)] shadow-[0_0_90px_70px_var(--dm-glow-color)]' :
+                                        'glow-animation absolute sm:bottom-[14rem] bottom-[8rem] right-[7rem] sm:right-[12rem] sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] rounded-full bg-[var(--lm-glow-color)] sm:shadow-[0_0_140px_130px_var(--lm-glow-color)] shadow-[0_0_90px_70px_var(--lm-glow-color)]'}
                                 ></div>
                                 <img className={currentTheme === 'dark' ? "portrait-animation sm:h-[24rem] h-[12rem] max-w-fit z-10 absolute bottom-0 sm:right-6 right-2" : "portrait-animation sm:h-[24rem] h-[12rem] max-w-fit z-10 absolute bottom-0 sm:right-6 right-2"}
                                     src={portraitSource} alt="PortraitDarkmode" />
@@ -155,41 +156,16 @@ export default function Contact() {
                             : drawingIsVisible &&
                             <>
                                 <div
-                                    className={currentTheme === 'dark' ? 'glow-fade-in absolute sm:bottom-[14rem] bottom-[8rem] right-[6rem] sm:right-[11rem] sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] rounded-full bg-[var(--dm-glow-color)] sm:shadow-[0_0_140px_130px_var(--dm-glow-color)] shadow-[0_0_90px_70px_var(--dm-glow-color)]' : 'glow-fade-in absolute sm:bottom-[14rem] bottom-[8rem] right-[7rem] sm:right-[14rem] sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] rounded-full bg-[var(--lm-glow-color)] sm:shadow-[0_0_140px_130px_var(--lm-glow-color)] shadow-[0_0_90px_70px_var(--lm-glow-color)]'}
+                                    className={currentTheme === 'dark' ? 'glow-fade-in absolute sm:bottom-[14rem] bottom-[8rem] right-[6rem] sm:right-[11rem] sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] rounded-full bg-[var(--dm-glow-color)] sm:shadow-[0_0_140px_130px_var(--dm-glow-color)] shadow-[0_0_90px_70px_var(--dm-glow-color)]' :
+                                        'glow-fade-in absolute sm:bottom-[14rem] bottom-[8rem] right-[7rem] sm:right-[12rem] sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] rounded-full bg-[var(--lm-glow-color)] sm:shadow-[0_0_140px_130px_var(--lm-glow-color)] shadow-[0_0_90px_70px_var(--lm-glow-color)]'}
                                 ></div>
                                 <img className={currentTheme === 'dark' ? "fade-in sm:h-[24rem] h-[12rem] max-w-fit z-10 absolute bottom-0 sm:right-6 right-2" : "fade-in sm:h-[24rem] h-[12rem] max-w-fit z-10 absolute bottom-0 sm:right-6 right-2"}
                                     src={portraitSource} alt="PortraitDarkmode" />
                             </>
                         }
                         {currentTheme === 'dark' ? <img className={drawingIsVisible && contactVisitedDark === 0 ? "drawing-animation sm:h-[24.2rem] h-[12.2rem] max-w-fit z-20 absolute -bottom-[0.1rem] sm:right-5 right-[0.3rem]" : "invisible sm:h-[24.2rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2"} src={`${drawingIsVisible ? drawingSource : ""}`} />
-                            : <img className={drawingIsVisible && contactVisitedLight === 0 ? "drawing-animation sm:h-[24.3rem] h-[12.3rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-[0.2rem]" : "invisible sm:h-[24.3rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2"} src={`${drawingIsVisible ? drawingSource : ""}`} />}
+                            : <img className={drawingIsVisible && contactVisitedLight === 0 ? "drawing-animation sm:h-[24.6rem] h-[12.3rem] max-w-fit z-20 absolute bottom-0 sm:right-[0.9rem] right-[0.2rem]" : "invisible sm:h-[24.4rem] h-[12rem] max-w-fit z-20 absolute bottom-0 sm:right-5 right-2"} src={`${drawingIsVisible ? drawingSource : ""}`} />}
                     </div>
-                    {/* <div className="flex absolute right-0 bottom-0 w-[50%]">
-                            {(contactVisitedDark === 0 && currentTheme === 'dark') || (contactVisitedLight === 0 && currentTheme === 'light') ?
-                                drawingIsVisible &&
-                                <>
-                                    <div
-                                        className={currentTheme === 'dark' ? 'glow-animation sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] relative rounded-full bg-[var(--dm-glow-color)] sm:shadow-[0_0_140px_130px_var(--dm-glow-color)] shadow-[0_0_90px_70px_var(--dm-glow-color)]'
-                                            : 'glow-animation sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] absolute sm:mr-44 mr-24 sm:mb-48 mb-32 rounded-full bg-[var(--lm-glow-color)] sm:shadow-[0_0_140px_130px_var(--lm-glow-color)] shadow-[0_0_90px_70px_var(--lm-glow-color)]'}
-                                    ></div>
-                                    <img className={currentTheme === 'dark' ? "portrait-animation sm:h-[24rem] h-[12rem] z-10"
-                                        : "portrait-animation sm:h-[24rem] h-[12rem] z-10 absolute sm:mr-5 mr-2"}
-                                        src={portraitSource} alt="PortraitDarkmode" />
-                                </>
-                                :
-                                drawingIsVisible &&
-                                <>
-                                    <div
-                                        className={currentTheme === 'dark' ? 'glow-fade-in sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] relative rounded-full bg-[var(--dm-glow-color)] sm:shadow-[0_0_140px_130px_var(--dm-glow-color)] shadow-[0_0_90px_70px_var(--dm-glow-color)]' : 'glow-fade-in sm:w-[8rem] w-[3rem] sm:h-[8rem] h-[3rem] absolute sm:mr-44 mr-24 sm:mb-48 mb-32 rounded-full bg-[var(--lm-glow-color)] sm:shadow-[0_0_140px_130px_var(--lm-glow-color)] shadow-[0_0_90px_70px_var(--lm-glow-color)]'}
-                                    ></div>
-                                    <img className={currentTheme === 'dark' ? "fade-in sm:h-[24rem] h-[12rem] z-10 sm:mr-6 mr-2 absolute bottom-0 right-0" : "fade-in sm:h-[24rem] h-[12rem] z-10 sm:mr-5 mr-2"}
-                                        src={portraitSource} alt="PortraitDarkmode" />
-                                </>
-                            }
-
-                            {currentTheme === 'dark' ? <img className={`${drawingIsVisible && contactVisitedDark === 0 ? "drawing-animation sm:h-[24rem] sm:w-[27.3rem] h-[12rem] w-[13.7rem] z-20 absolute bottom-0 right-0" : "opacity-50 sm:h-[24rem] sm:w-[27.3rem] h-[12rem] w-[13.7rem] z-20 absolute bottom-0 right-2"}`} src={`${drawingIsVisible ? drawingSource : ""}`} />
-                                : <img className={`${drawingIsVisible && contactVisitedLight === 0 ? "drawing-animation sm:h-[24.3rem] sm:w-[29.9rem] h-[12rem] w-[14.8rem] z-20 absolute bottom-0 right-0" : "opacity-50 sm:h-[24.3rem] sm:w-[29.9rem] h-[12rem] w-[14.8rem] z-20 absolute bottom-0 right-0"}`} src={`${drawingIsVisible ? drawingSource : ""}`} />}
-                        </div> */}
                 </div>
             </section>
         </>
