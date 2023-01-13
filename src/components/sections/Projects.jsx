@@ -117,11 +117,11 @@ export default function Projects() {
                     {otherProjectsVisible ?
                         <button
                             onClick={openOtherProjects}
-                            className={currentTheme === "dark" ? "hide-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)]" : "hide-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)]"}>
+                            className={currentTheme === "dark" ? "hide-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] transform-gpu" : "hide-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] transform-gpu"}>
                             Hide Others</button> :
                         <button
                             onClick={openOtherProjects}
-                            className={currentTheme === "dark" ? "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)]" : "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)]"}>
+                            className={currentTheme === "dark" ? "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] transform-gpu" : "open-other-button badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] transform-gpu"}>
                             Show Others</button>}
                     {otherProjectsVisible &&
                         <div className="fade-in flex h-fit gap-6 flex-wrap justify-center mt-5 mb-10">
