@@ -28,7 +28,7 @@ export default function Experience() {
                     <div ref={skillsRef} id="Skills" className={skillsIsVisible ? "flex flex-col items-center fade-in mx-auto mt-4 sm:mt-28" : "text-center mt-4 sm:mt-28 invisible"}>
                         <h3 className={currentTheme === 'dark' ? "text-3xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] mb-6"
                             : "text-3xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] mb-6"}>Skills</h3>
-                        <div className="flex sm:gap-x-4 gap-x-2 sm:gap-y-2 px-8 items-center justify-center flex-wrap transition-all">
+                        <div className="flex sm:gap-x-4 gap-x-2 sm:gap-y-2 items-center justify-center flex-wrap transition-all">
                             <div
                                 className={currentTheme === 'dark' ? "flex flex-col items-center justify-center text-transparent text-xs hover:text-[var(--dm-secondary-color)] ease-in-out delay-100 duration-300"
                                     : "flex flex-col items-center justify-center text-transparent text-xs hover:text-[var(--lm-secondary-color)] ease-in-out delay-100 duration-300"}
