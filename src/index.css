@@ -221,7 +221,6 @@ Add gif as div background, put text layer on top and add these css attributes to
 	}
 }
 
-
  .glow-fade-in {
     animation-name: glow-fade-in;
     animation-delay: 1s;
@@ -236,7 +235,7 @@ Add gif as div background, put text layer on top and add these css attributes to
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
-    height: 6.5rem;
+    height: 6.8rem;
   }
 
   .card-text-cutoff > p {

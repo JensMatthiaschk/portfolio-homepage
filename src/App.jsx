@@ -7,7 +7,7 @@ import Contact from './components/sections/Contact.jsx'
 function App() {
 
   return (
-    <div className="App">
+    <div className="App h-full overflow-hidden">
       <Navbar />
       <About />
       <Experience />

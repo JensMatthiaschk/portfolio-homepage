@@ -48,14 +48,14 @@ export default function EmailModal() {
         <>
             <input type="checkbox" id="emailModal" className="modal-toggle" />
             <label htmlFor="emailModal" className="modal cursor-pointer">
-                <label className={`${currentTheme === 'dark' ? "modal-box relative bg-base-100" : "modal-box relative bg-stone-200"}`} htmlFor="">
+                <label className={currentTheme === 'dark' ? "modal-box relative bg-base-100" : "modal-box relative bg-stone-200"} htmlFor="">
                     <label htmlFor="emailModal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="mb-3">👋 Send me a message!</h3>
                     <form className="flex flex-col gap-y-4" onSubmit={onSubmit} method="post"
                         encType='application/x-www-form-urlencoded'
                     >
                         <input
-                            className={`${currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}`}
+                            className={currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
                             type='text'
                             name='from_name'
                             placeholder='Your name'
@@ -63,7 +63,7 @@ export default function EmailModal() {
                             onChange={handleChange}
                         />
                         <input
-                            className={`${currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}`}
+                            className={currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
                             type='email'
                             name='reply_to'
                             placeholder='Your email'
@@ -72,7 +72,7 @@ export default function EmailModal() {
                             required
                         />
                         <textarea
-                            className={`${currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}`}
+                            className={currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
                             type='text'
                             name='message'
                             placeholder='Your message'

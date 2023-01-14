@@ -16,7 +16,7 @@ export default function About() {
     return (
         <>
             <section id="About" ref={aboutRef}
-                className="flex h-screen lg:ml-36 lg:pl-4 sm:ml-20 ml-2 px-8 flex-col justify-center overflow-hidden"
+                className="flex h-screen lg:ml-36 lg:pl-4 sm:ml-20 px-8 flex-col justify-center overflow-hidden"
             >
                 <h3 className="font-['Montserrat'] md:text-3xl sm:text-2xl text-xl">Hi, I'm</h3>
                 <h1 className="font-['Montserrat'] md:text-8xl sm:text-5xl text-4xl font-extrabold w-auto">Jens Matthiaschk</h1>
