@@ -250,7 +250,6 @@ Add gif as div background, put text layer on top and add these css attributes to
   border-image-source: url('images/dots_light.svg');
   border-image-slice: 33% 33%;
   border-image-repeat: round;
-  border-radius: 100%;
   }
 
   .nice-border-dark {
