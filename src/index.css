@@ -243,6 +243,8 @@ Add gif as div background, put text layer on top and add these css attributes to
     padding-bottom:0;
   }
 
+
+  
   .nice-border-light {
   /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
   border-style: dotted; 
@@ -250,6 +252,7 @@ Add gif as div background, put text layer on top and add these css attributes to
   border-image-source: url('images/dots_light.svg');
   border-image-slice: 33% 33%;
   border-image-repeat: round;
+  border-left-width: 0.5rem;
   }
 
   .nice-border-dark {
@@ -259,4 +262,31 @@ Add gif as div background, put text layer on top and add these css attributes to
   border-image-source: url('images/dots_dark.svg');
   border-image-slice: 33% 33%;
   border-image-repeat: round;
+  border-left-width: 0.5rem;
+  }
+  
+
+  @media only screen and (max-width: 639px) {
+  .nice-border-light {
+  /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
+  border-style: dotted; 
+  border-color: #212121; 
+  border-image-source: url('images/dots_light.svg');
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  border-top-width: 0.5rem;
+  border-left-width: 0;
+ 
+  }
+
+  .nice-border-dark {
+  /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
+   border-style: dotted; 
+  border-color: #b5a887; 
+  border-image-source: url('images/dots_dark.svg');
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
+  border-top-width: 0.5rem;
+  border-left-width: 0;
+  }
   }
