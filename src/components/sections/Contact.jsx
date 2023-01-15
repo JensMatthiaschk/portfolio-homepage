@@ -66,8 +66,8 @@ export default function Contact() {
                 </div>
                 <div className="flex items-end justify-between">
                     {drawingIsVisible &&
-                        <div className="flex flex-col h-[20rem] sm:h-[30rem] justify-between pb-4 md:pb-10 sm:pt-32">
-                            <ul className={(currentTheme === 'dark' && contactVisitedDark === 0) || (currentTheme === 'light' && contactVisitedLight === 0) ? "linkButton-fade-in-animation flex flex-col md:flex-row sm:flex-wrap gap-4 sm:gap-6 items-start sm:pl-16 pl-14 z-30" : "fade-in flex flex-col md:flex-row sm:flex-wrap gap-4 sm:gap-6 items-start sm:pl-16 pl-14 z-30"}>
+                        <div className="flex flex-col h-[20rem] sm:h-[30rem] justify-between items-center pb-4 md:pb-10 sm:pt-32">
+                            <ul className={(currentTheme === 'dark' && contactVisitedDark === 0) || (currentTheme === 'light' && contactVisitedLight === 0) ? "linkButton-fade-in-animation flex flex-col md:flex-row sm:flex-wrap gap-4 sm:gap-6 items-center sm:pl-16 pl-14 z-30" : "fade-in flex flex-col md:flex-row sm:flex-wrap gap-4 sm:gap-6 items-start sm:pl-16 pl-14 z-30"}>
                                 <li>
                                     <a href="https://github.com/JensMatthiaschk"
                                         target="_newBrowserTab"
@@ -133,7 +133,7 @@ export default function Contact() {
                                         </svg>
                                     </a>
                                 </li>
-                                <li><p className="md:hidden block text-xs">© {year}</p></li>
+                                <li><p className="md:hidden block text-xs pt-2">© {year}</p></li>
                             </ul>
                             <div className={(currentTheme === 'dark' && contactVisitedDark === 0) || (currentTheme === 'light' && contactVisitedLight === 0) ? "linkButton-fade-in-animation flex flex-col sm:text-sm text-[0.5rem] w-38 sm:ml-10 ml-3" : "fade-in flex flex-col sm:text-sm text-[0.5rem] w-38 sm:ml-10 ml-3"}>
                                 <p className="md:block hidden">Jens Matthiaschk © {year}</p>
