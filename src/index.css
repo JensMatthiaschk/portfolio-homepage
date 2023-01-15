@@ -245,8 +245,8 @@ Add gif as div background, put text layer on top and add these css attributes to
 
   .nice-border-light {
   /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
-  border-style: dotted; 
-  border-color: #212121; 
+  /* border-style: dotted; 
+  border-color: #212121;  */
   border-image-source: url('images/dots_light.svg');
   border-image-slice: 33% 33%;
   border-image-repeat: round;
@@ -254,8 +254,8 @@ Add gif as div background, put text layer on top and add these css attributes to
 
   .nice-border-dark {
   /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
-   border-style: dotted; 
-  border-color: #b5a887; 
+   /* border-style: dotted; 
+  border-color: #b5a887;  */
   border-image-source: url('images/dots_dark.svg');
   border-image-slice: 33% 33%;
   border-image-repeat: round;
