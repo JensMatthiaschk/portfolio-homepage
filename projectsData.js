@@ -11,7 +11,7 @@ export const projects = [
     {
         img_url: "/images/Bici_go.png",
         title: "Bici Go!",
-        description: "Final Group project of WBS Coding School: A full-stack application for cyclists. Users can register, upload profile images and most importantly pin bike related locations on the central component - the map. Other cyclists can comment and rate existing pins for feedback and a community feel.",
+        description: "Final Group project of WBS Coding School: A full-stack application for cyclists. Users can register, upload profile images and most importantly pin bike related locations on the central component - the map. Other cyclists can comment and rate existing pins for feedback and a community feeling.",
         techstack_front: ["React", "Tailwind CSS", "Daisy UI", "Netlify"],
         techstack_back: ["Node.js", "Express.js", "MongoDB", "AWS S3", "Railway"],
         page_url: "https://superlative-dieffenbachia-8c430f.netlify.app/",
@@ -34,7 +34,7 @@ export const otherProjects = [
     {
         img_url: "",
         title: "Poke Fight",
-        description: "The Pokemon API offers a good collection of all pokemons which was the foundation for this exercise to create a pokemon game. Storing the data in an own database and backend server and building an interface with some game logic for the frontend was a good first full-stack challenge.",
+        description: "The Pokemon API offers an ever-growing collection of all pokemon. Storing the data in its own database and backend server in addition to building an interface with some game logic for the frontend was a good first full-stack challenge.",
         techstack_front: ["React", "Tailwind CSS"],
         techstack_back: ["Node.js", "Express.js"],
         page_url: "",
@@ -57,7 +57,7 @@ export const otherProjects = [
     {
         img_url: "",
         title: "Travel Blog",
-        description: "In this project we got introduced to Content Management Systems (CMS) which we used to create dummy travel destination content and fetch it in our frontend from the API provided by the CMS. Later we stored the contentful data on our own PostgreSQL database. We used React Router and more advanced hooks like useParams and useContext.",
+        description: "In this project we were introduced to the Contenful Content Management Systems (CMS) which we used to create dummy travel destination content and fetch it in our frontend from the API provided by the CMS. Later we stored the Contentful data on our own PostgreSQL database. We used React Router and more advanced hooks like useParams and useContext.",
         techstack_front: ["React", "Tailwind CSS", "Daisy UI"],
         techstack_back: ["Node.js", "Express.js", "PostgreSQL"],
         page_url: "",
@@ -118,7 +118,7 @@ export const otherProjects = [
     {
         img_url: "",
         title: "Cook Book",
-        description: "A simple web application displaying cooking recipes. Our first exercise to get familiar with HTML architecture and CSS",
+        description: "A simple web application displaying cooking recipes. Our first exercise to get familiar with HTML architecture and CSS.",
         techstack_front: ["HTML", "CSS", "JavaScript"],
         techstack_back: [],
         page_url: "",

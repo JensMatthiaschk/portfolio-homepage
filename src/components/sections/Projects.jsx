@@ -125,7 +125,7 @@ export default function Projects() {
                     {otherProjectsVisible &&
                         <div className="fade-in flex h-fit gap-6 flex-wrap justify-center mt-5 mb-10">
                             <div className="text-center my-5 sm:text-xl mb-10 w-full">
-                                <p className="sm:w-[60%] mx-auto">Since I'm at a very early stage of my newly started developer career, my list of projects is too. But since I spend lots of time in the coding bootcamp working on group projects I wanted to share those along with the awesome people I've met during that class.</p>
+                                <p className="sm:w-[60%] mx-auto">Since I'm at a very early stage of my newly started career, my portfolio is too. But I wanted demonstrate some of the new skills I put into use working with other awesome new developers in the coding bootcamp.</p>
                             </div>
                             {otherProjects.map((p, i) => {
                                 function toggleMoreText(p) {

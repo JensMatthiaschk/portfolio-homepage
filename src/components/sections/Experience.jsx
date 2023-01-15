@@ -28,7 +28,7 @@ export default function Experience() {
                     <div ref={skillsRef} id="Skills" className={skillsIsVisible ? "flex flex-col items-center fade-in mx-auto mt-4 sm:mt-28" : "text-center mt-4 sm:mt-28 invisible"}>
                         <h3 className={currentTheme === 'dark' ? "text-3xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] mb-6"
                             : "text-3xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] mb-6"}>Skills</h3>
-                        <div className="flex sm:gap-x-4 gap-x-2 sm:gap-y-2 items-center justify-center flex-wrap transition-all">
+                        <div className="flex sm:gap-x-4 gap-x-2 sm:gap-y-2 items-center justify-center flex-wrap transition-all px-3">
                             <div
                                 className={currentTheme === 'dark' ? "flex flex-col items-center justify-center text-transparent text-xs hover:text-[var(--dm-secondary-color)] ease-in-out delay-100 duration-300"
                                     : "flex flex-col items-center justify-center text-transparent text-xs hover:text-[var(--lm-secondary-color)] ease-in-out delay-100 duration-300"}
@@ -96,7 +96,7 @@ export default function Experience() {
                                     {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}</h4>}
                                     <p>{e.time_period}</p>
                                 </div>
-                                <div className={currentTheme === 'dark' ? "border-dotted sm:border-l-4 sm:border-t-0 border-t-4 border-[var(--dm-secondary-color)] sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "border-dotted sm:border-l-4 sm:border-t-0 border-t-4 border-[var(--lm-secondary-color)] sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly"}>
+                                <div className={currentTheme === 'dark' ? "nice-border-dark border-dotted sm:border-l-8 sm:border-t-0 border-t-8 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "nice-border-light sm:border-l-8 sm:border-t-0 border-t-8 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly"}>
                                     <p >{e.description}</p>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@ export default function Experience() {
                                     {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.company}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>{e.company}</h4>}
                                     <p>{e.time_period}</p>
                                 </div>
-                                <div className={currentTheme === 'dark' ? "border-dotted sm:border-l-4 border-t-4 sm:border-t-0 border-[var(--dm-secondary-color)] sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "border-dotted sm:border-l-4 border-t-4 sm:border-t-0 border-[var(--lm-secondary-color)] sm:ml-5 mt-4 pt-4 sm:mt-0 sm:pl-8 flex flex-col sm:w-8/12 w-full justify-evenly"}>
+                                <div className={currentTheme === 'dark' ? "nice-border-dark border-dotted sm:border-l-8 border-t-8 sm:border-t-0 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "nice-border-light border-dotted sm:border-l-8 border-t-8 sm:border-t-0 sm:ml-5 mt-4 pt-4 sm:mt-0 sm:pl-8 flex flex-col sm:w-8/12 w-full justify-evenly"}>
                                     <div>{e.description}</div>
                                     {i === 0 ? <span className="mt-2"><span className="text-4xl align-middle leading-[1rem]">☞ </span>For a full list of projects, please visit my <a href="http://www.linkedin.com/in/jensmatthiaschk"
                                         target="_newBrowserTab"
