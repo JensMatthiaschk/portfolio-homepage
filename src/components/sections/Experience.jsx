@@ -96,7 +96,7 @@ export default function Experience() {
                                     {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}</h4>}
                                     <p>{e.time_period}</p>
                                 </div>
-                                <div className={currentTheme === 'dark' ? "nice-border-dark border-l-0 sm:border-l-8 border-t-8 sm:border-t-0 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "nice-border-light border-l-0 sm:border-l-8 border-t-8 sm:border-t-0 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly"}>
+                                <div className={currentTheme === 'dark' ? "nice-border-dark border-l-0 sm:border-l-2 border-t-2 sm:border-t-0 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "nice-border-light border-l-0 sm:border-l-2 border-t-2 sm:border-t-0 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly"}>
                                     <p >{e.description}</p>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@ export default function Experience() {
                                     {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.company}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>{e.company}</h4>}
                                     <p>{e.time_period}</p>
                                 </div>
-                                <div className={currentTheme === 'dark' ? "nice-border-dark border-l-0 sm:border-l-8 border-t-8 sm:border-t-0 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "nice-border-light border-l-0 sm:border-l-8 border-t-8 sm:border-t-0 sm:ml-5 mt-4 pt-4 sm:mt-0 sm:pl-8 flex flex-col sm:w-8/12 w-full justify-evenly"}>
+                                <div className={currentTheme === 'dark' ? "nice-border-dark border-l-0 sm:border-l-2 border-t-2 sm:border-t-0 sm:ml-5 mt-4 sm:mt-0 sm:pl-8 pt-4 flex flex-col sm:w-8/12 w-full justify-evenly" : "nice-border-light border-l-0 sm:border-l-2 border-t-2 sm:border-t-0 sm:ml-5 mt-4 pt-4 sm:mt-0 sm:pl-8 flex flex-col sm:w-8/12 w-full justify-evenly"}>
                                     <div>{e.description}</div>
                                     {i === 0 ? <span className="mt-2"><span className="text-4xl align-middle leading-[1rem]">☞ </span>For a full list of projects, please visit my <a href="http://www.linkedin.com/in/jensmatthiaschk"
                                         target="_newBrowserTab"
