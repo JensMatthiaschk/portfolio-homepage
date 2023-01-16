@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { ThemeContext } from './ThemeContext';
-import { postEmail } from '../../emailController';
+import { postEmail } from '../data/emailController';
 
 export default function EmailModal() {
     const { currentTheme } = useContext(ThemeContext)

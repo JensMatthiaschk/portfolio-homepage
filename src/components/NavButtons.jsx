@@ -23,7 +23,7 @@ export default function NavButtons() {
             {currentTheme === 'dark' ?
                 <ul className="flex flex-col justify-center h-screen items-end fixed sm:right-5 right-3 sm:gap-y-1 gap-y-3 transition-all z-40">
                     {menuDots.map((dot, i) =>
-                        <li key={i}>
+                        <li key={`nav-dot-dm-${i}`}>
                             <Link onClick={() => setSectionActive(dot.section)} to={dot.section} spy={true} smooth={true} offset={dot.offset} duration={500}>
                                 <div className="text-transparent hover:text-[var(--dm-secondary-color)] flex items-center">
                                     <p className="text-xs lg:text-base ease-in-out delay-700 duration-100 mr-2 sm:inline-block hidden">{dot.section}</p>
@@ -37,7 +37,7 @@ export default function NavButtons() {
                 </ul> :
                 <ul className="flex flex-col justify-center h-screen items-end fixed sm:right-5 right-3 sm:gap-y-1 gap-y-3 transition-all z-40">
                     {menuDots.map((dot, i) =>
-                        <li key={i}>
+                        <li key={`nav-dot-lm-${i}`}>
                             <Link onClick={() => setSectionActive(dot.section)} to={dot.section} spy={true} smooth={true} offset={dot.offset} duration={500}>
                                 <div className="text-transparent hover:text-[var(--lm-secondary-color)] flex items-center">
                                     <p className="text-xs lg:text-base ease-in-out delay-700 duration-100 mr-2 sm:inline-block hidden">{dot.section}</p>

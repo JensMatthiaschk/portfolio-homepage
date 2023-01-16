@@ -1,7 +1,7 @@
 import { ThemeContext } from "../ThemeContext.jsx"
 import { useContext, useEffect, useRef, useState } from "react"
 import { useInView } from "react-intersection-observer"
-import { educationAndTraining, professionalExperience } from "../../../experienceData.js"
+import { educationAndTraining, professionalExperience } from "../../data/experienceData.js"
 
 export default function Experience() {
 
@@ -14,8 +14,6 @@ export default function Experience() {
     useEffect(() => {
         if (experienceIsVisible === true) setSectionActive('Experience')
     }, [experienceIsVisible])
-
-    console.log("SKILLS", skillsIsVisible)
 
     return (
         <>
@@ -107,16 +105,16 @@ export default function Experience() {
                             }, [])
 
                             return (
-                                <div key={i} className={currentTheme === "dark" ? "h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
+                                <div key={`ed-${i}`} className={currentTheme === "dark" ? "h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
                                     : "w-full h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"}>
                                     <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center sm:mr-8 mb-8">
                                         <h3 className="font-extrabold text-xl">{e.title}</h3>
                                         {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}</h4>}
                                         <p>{e.time_period}</p>
                                     </div>
-                                    <div ref={dots} className="flex sm:flex-col sm:gap-y-1 gap-x-1 justify-center items-center">
-                                        {[...Array(multiplier)].map(() =>
-                                            <div className={currentTheme === 'dark' ? "rounded-full w-1 h-1 bg-[var(--dm-secondary-color)]" : "rounded-full w-1 h-1 bg-[var(--lm-secondary-color)]"}></div>
+                                    <div ref={dots} className="flex sm:flex-col sm:gap-y-1 gap-x-1 justify-center items-center max-w-[512px] max-h-[412px]">
+                                        {[...Array(multiplier)].map((e, i) =>
+                                            <div id={`dot-ed-${i}`} className={currentTheme === 'dark' ? "rounded-full w-1 h-1 bg-[var(--dm-secondary-color)]" : "rounded-full w-1 h-1 bg-[var(--lm-secondary-color)]"}></div>
                                         )}
                                     </div>
                                     <div className={currentTheme === 'dark' ? "mt-8 sm:mt-0 sm:ml-8 flex flex-col sm:w-8/12 w-full justify-evenly" : "mt-8 sm:mt-0 sm:ml-8 flex flex-col sm:w-8/12 w-full justify-evenly"}>
@@ -150,16 +148,16 @@ export default function Experience() {
                             }, [])
 
                             return (
-                                <div key={i} className={currentTheme === "dark" ? "w-full h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
+                                <div key={`ex-${i}`} className={currentTheme === "dark" ? "w-full h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
                                     : "w-full h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"}>
                                     <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center sm:mr-8 mb-8">
                                         <h3 className="font-extrabold text-xl">{e.position}</h3>
                                         {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.company}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>{e.company}</h4>}
                                         <p>{e.time_period}</p>
                                     </div>
-                                    <div ref={dots} className="flex flex-row sm:flex-col sm:gap-y-1 gap-x-1 justify-center items-center">
-                                        {[...Array(multiplier)].map(() =>
-                                            <div className={currentTheme === 'dark' ? "rounded-full w-1 h-1 bg-[var(--dm-secondary-color)]" : "rounded-full w-1 h-1 bg-[var(--lm-secondary-color)]"}></div>
+                                    <div ref={dots} className="flex flex-row sm:flex-col sm:gap-y-1 gap-x-1 justify-center items-center max-w-[512px] max-h-[412px]">
+                                        {[...Array(multiplier)].map((e, i) =>
+                                            <div id={`dot-ex-${i}`} className={currentTheme === 'dark' ? "rounded-full w-1 h-1 bg-[var(--dm-secondary-color)]" : "rounded-full w-1 h-1 bg-[var(--lm-secondary-color)]"}></div>
                                         )}
                                     </div>
                                     <div className={currentTheme === 'dark' ? "mt-8 sm:mt-0 sm:ml-8 flex flex-col sm:w-8/12 w-full justify-evenly" : "mt-8 sm:mt-0 sm:ml-8 flex flex-col sm:w-8/12 w-full justify-evenly"}>

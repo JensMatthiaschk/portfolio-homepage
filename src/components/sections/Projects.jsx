@@ -1,7 +1,7 @@
 import { ThemeContext } from "../ThemeContext.jsx"
 import { useContext, useEffect, useState, useRef } from "react"
 import { useInView } from "react-intersection-observer"
-import { projects, otherProjects } from "../../../projectsData.js"
+import { projects, otherProjects } from "../../data/projectsData.js"
 
 
 export default function Projects() {
@@ -43,8 +43,11 @@ export default function Projects() {
                                     document.querySelector(`.more-button-${i}`).classList.toggle("hidden")
                                     document.querySelector(`.less-button-${i}`).classList.toggle("hidden")
                                 }
+
+                                console.log("ProjectsCards", p)
+
                                 return (
-                                    <div key={i} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mb-10"
+                                    <div key={`project-${i}`} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mb-10"
                                         : "card max-w-[20rem] h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300 mb-10"}>
                                         <figure className="h-[11.1rem] m-[0.4rem] rounded">
                                             <img src={p.img_url} alt={`Project-${i + 1}`} />
@@ -59,9 +62,9 @@ export default function Projects() {
                                                 {p.contributors ?
                                                     <div className="my-2">
                                                         Contributors:
-                                                        {p.contributors.map((e) =>
+                                                        {p.contributors.map((e, i) =>
                                                             <>
-                                                                <a className={currentTheme === 'dark' ? "text-xs font-extralight badge mx-2 hover:bg-cyan-900 text-[var(--dm-secondary-color)] border-[var(--dm-secondary-color)]" : "text-xs font-extralight badge mx-2 hover:text-[var(--lm-third-color)]"} href={e.github_url} target="_newBrowserTab"
+                                                                <a key={`contributor-${i}`} className={currentTheme === 'dark' ? "text-xs font-extralight badge mx-2 hover:bg-cyan-900 text-[var(--dm-secondary-color)] border-[var(--dm-secondary-color)]" : "text-xs font-extralight badge mx-2 hover:text-[var(--lm-third-color)]"} href={e.github_url} target="_newBrowserTab"
                                                                     rel="noopener">{e.name}
                                                                     <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-3 w-3" fill="currentColor" viewBox="0 0 16 16">
                                                                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
@@ -75,10 +78,10 @@ export default function Projects() {
                                             <button className={`less-button-${i} badge text-xs btn-outline text-current w-fit place-self-end hidden`} onClick={toggleMoreText}>less</button>
                                             <div className="card-actions flex place-content-start justify-end h-16 p-0 mt-6">
                                                 {p.techstack_front.map((e, i) =>
-                                                    <div key={i} className="badge badge-sm badge-outline badge-info relative">{e}</div>
+                                                    <div key={`frontend-badge-${i}`} className="badge badge-sm badge-outline badge-info relative">{e}</div>
                                                 )}
                                                 {p.techstack_back.map((e, i) =>
-                                                    <div key={i} className="badge badge-sm badge-outline badge-success">{e}</div>
+                                                    <div key={`backend-badge-${i}`} className="badge badge-sm badge-outline badge-success">{e}</div>
                                                 )}
                                             </div>
                                             <div className="flex gap-x-1 items-center mt-1 h-4">
@@ -135,7 +138,7 @@ export default function Projects() {
                                     document.querySelector(`.op-less-button-${i}`).classList.toggle("hidden")
                                 }
                                 return (
-                                    <div key={i} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200"
+                                    <div key={`otherProject-${i}`} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200"
                                         : "card max-w-[20rem] h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300"}>
                                         {p.img_url ? <figure className="h-[11.1rem] m-[0.4rem] rounded">
                                             <img src={p.img_url} alt={`Project-${i + 1}`} />
@@ -159,8 +162,8 @@ export default function Projects() {
                                                     {p.contributors &&
                                                         <>
                                                             Contributors:
-                                                            {p.contributors.map((e) =>
-                                                                <a className={currentTheme === 'dark' ? "font-extralight text-xs badge mx-2 hover:bg-cyan-900 text-[var(--dm-secondary-color)] border-[var(--dm-secondary-color)]" : "font-extralight text-xs badge mx-2 hover:text-[var(--lm-third-color)]"} href={e.github_url} target="_newBrowserTab"
+                                                            {p.contributors.map((e, i) =>
+                                                                <a key={`contributor-${i}`} className={currentTheme === 'dark' ? "font-extralight text-xs badge mx-2 hover:bg-cyan-900 text-[var(--dm-secondary-color)] border-[var(--dm-secondary-color)]" : "font-extralight text-xs badge mx-2 hover:text-[var(--lm-third-color)]"} href={e.github_url} target="_newBrowserTab"
                                                                     rel="noopener">{e.name}
                                                                     <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-3 w-3" fill="currentColor" viewBox="0 0 16 16">
                                                                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
@@ -174,11 +177,11 @@ export default function Projects() {
                                             <button className={`op-less-button-${i} badge text-xs text-current btn-outline w-fit place-self-end hidden`} onClick={toggleMoreText}>less</button>
                                             <div className="card-actions flex place-content-start justify-end h-10 mt-2">
                                                 {p.techstack_front.map((e, i) =>
-                                                    <div key={i} className="badge badge-sm badge-outline badge-info relative">
+                                                    <div key={`frontend-badge-${i}`} className="badge badge-sm badge-outline badge-info relative">
                                                         {e}</div>
                                                 )}
                                                 {p.techstack_back.map((e, i) =>
-                                                    <div key={i}
+                                                    <div key={`backend-badge-${i}`}
                                                         className="badge badge-sm badge-outline badge-success">
                                                         {e}</div>
                                                 )}
