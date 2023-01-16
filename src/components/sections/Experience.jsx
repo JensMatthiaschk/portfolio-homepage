@@ -112,7 +112,7 @@ export default function Experience() {
                                         {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}</h4>}
                                         <p>{e.time_period}</p>
                                     </div>
-                                    <div ref={dots} className="flex sm:flex-col sm:gap-y-1 gap-x-1 justify-center items-center max-w-[512px] max-h-[412px]">
+                                    <div ref={dots} className="flex sm:flex-col sm:gap-y-1 gap-x-1 justify-center items-center">
                                         {[...Array(multiplier)].map((e, i) =>
                                             <div id={`dot-ed-${i}`} className={currentTheme === 'dark' ? "rounded-full w-1 h-1 bg-[var(--dm-secondary-color)]" : "rounded-full w-1 h-1 bg-[var(--lm-secondary-color)]"}></div>
                                         )}
@@ -155,7 +155,7 @@ export default function Experience() {
                                         {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.company}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>{e.company}</h4>}
                                         <p>{e.time_period}</p>
                                     </div>
-                                    <div ref={dots} className="flex flex-row sm:flex-col sm:gap-y-1 gap-x-1 justify-center items-center max-w-[512px] max-h-[412px]">
+                                    <div ref={dots} className="flex flex-row sm:flex-col sm:gap-y-1 gap-x-1 justify-center items-center">
                                         {[...Array(multiplier)].map((e, i) =>
                                             <div id={`dot-ex-${i}`} className={currentTheme === 'dark' ? "rounded-full w-1 h-1 bg-[var(--dm-secondary-color)]" : "rounded-full w-1 h-1 bg-[var(--lm-secondary-color)]"}></div>
                                         )}
