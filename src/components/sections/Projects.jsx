@@ -37,14 +37,13 @@ export default function Projects() {
                     <div className="flex flex-col items-center">
                         <div className="gap-6 flex flex-wrap justify-center">
                             {projects.map((p, i) => {
+
                                 function toggleMoreText() {
                                     console.log("click")
                                     document.querySelector(`.card-text-body-${i}`).classList.toggle("card-text-cutoff")
                                     document.querySelector(`.more-button-${i}`).classList.toggle("hidden")
                                     document.querySelector(`.less-button-${i}`).classList.toggle("hidden")
                                 }
-
-                                console.log("ProjectsCards", p)
 
                                 return (
                                     <div key={`project-${i}`} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mb-10"
@@ -131,12 +130,14 @@ export default function Projects() {
                                 <p className="sm:w-[60%] mx-auto">Since I'm at a very early stage of my newly started career, my portfolio is too. But I wanted demonstrate some of the new skills I put into use working with other awesome new developers in the coding bootcamp.</p>
                             </div>
                             {otherProjects.map((p, i) => {
+
                                 function toggleMoreText(p) {
                                     console.log("click")
                                     document.querySelector(`.op-card-text-body-${i}`).classList.toggle("card-text-cutoff")
                                     document.querySelector(`.op-more-button-${i}`).classList.toggle("hidden")
                                     document.querySelector(`.op-less-button-${i}`).classList.toggle("hidden")
                                 }
+
                                 return (
                                     <div key={`otherProject-${i}`} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200"
                                         : "card max-w-[20rem] h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300"}>
