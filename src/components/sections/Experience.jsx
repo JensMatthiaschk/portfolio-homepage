@@ -6,7 +6,7 @@ import { educationAndTraining, professionalExperience } from "../../data/experie
 export default function Experience() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.1 })
+    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.25 })
     const { ref: skillsRef, inView: skillsIsVisible } = useInView({ threshold: 0 })
     const { ref: educationTrainingRef, inView: educationTrainingIsVisible } = useInView({ threshold: 0 })
     const { ref: professionalExperienceRef, inView: professionalExperienceIsVisible } = useInView({ threshold: 0 })
