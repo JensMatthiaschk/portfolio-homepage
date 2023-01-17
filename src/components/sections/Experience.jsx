@@ -89,20 +89,21 @@ export default function Experience() {
                         {educationAndTraining.map((e, i) => {
 
                             const dots = useRef(null)
-                            const [multiplier, setMultiplier] = useState()
+                            const [multiplier, setMultiplier] = useState(10)
 
                             useEffect(() => {
                                 const height = dots.current.offsetHeight
                                 const width = dots.current.offsetWidth
-                                if (width < 5) {
-                                    const multiplier = Math.round(height / 8)
-                                    setMultiplier(multiplier)
+                                console.log({ height, width })
+                                if (experienceIsVisible === true && width === 4 && height >= 5) {
+                                    const multiplierCalc = Math.round(height / 8)
+                                    setMultiplier(multiplierCalc)
                                 }
-                                else {
-                                    const multiplier = Math.round(width / 8)
-                                    setMultiplier(multiplier)
+                                else if (experienceIsVisible === true && height === 4 && width >= 5) {
+                                    const multiplierCalc = Math.round(width / 8)
+                                    setMultiplier(multiplierCalc)
                                 }
-                            }, [])
+                            }, [experienceIsVisible])
 
                             return (
                                 <div key={`ed-${i}`} className={currentTheme === "dark" ? "h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
@@ -132,20 +133,22 @@ export default function Experience() {
                         {professionalExperience.map((e, i) => {
 
                             const dots = useRef(null)
-                            const [multiplier, setMultiplier] = useState()
+                            const [multiplier, setMultiplier] = useState(10)
 
                             useEffect(() => {
                                 const height = dots.current.offsetHeight
                                 const width = dots.current.offsetWidth
-                                if (width < 5) {
-                                    const multiplier = Math.round(height / 8)
-                                    setMultiplier(multiplier)
+                                if (experienceIsVisible === true && width === 4 && height >= 5) {
+                                    const multiplierCalc = Math.round(height / 8)
+                                    setMultiplier(multiplierCalc)
                                 }
-                                else {
-                                    const multiplier = Math.round(width / 8)
-                                    setMultiplier(multiplier)
+                                else if (experienceIsVisible === true && height === 4 && width >= 5) {
+                                    const multiplierCalc = Math.round(width / 8)
+                                    setMultiplier(multiplierCalc)
                                 }
-                            }, [])
+                            }, [experienceIsVisible])
+
+                            console.log("MULTIPLIER SET", multiplier)
 
                             return (
                                 <div key={`ex-${i}`} className={currentTheme === "dark" ? "w-full h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
