@@ -108,7 +108,7 @@ export default function Experience() {
                             return (
                                 <div key={`ed-${i}`} className={currentTheme === "dark" ? "h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
                                     : "w-full h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"}>
-                                    <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center sm:mr-8 mb-8">
+                                    <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center sm:mr-8 sm:mb-0 mb-8">
                                         <h3 className="font-extrabold text-xl">{e.title}</h3>
                                         {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.school}</h4>}
                                         <p>{e.time_period}</p>
@@ -153,7 +153,7 @@ export default function Experience() {
                             return (
                                 <div key={`ex-${i}`} className={currentTheme === "dark" ? "w-full h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
                                     : "w-full h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"}>
-                                    <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center sm:mr-8 mb-8">
+                                    <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center sm:mr-8 sm:mb-0 mb-8">
                                         <h3 className="font-extrabold text-xl">{e.position}</h3>
                                         {e.location ? <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>@ {e.company}, {e.location}</h4> : <h4 className={currentTheme === 'dark' ? "" : "drop-shadow-[2px_2px_0_var(--lm-third-color)]"}>{e.company}</h4>}
                                         <p>{e.time_period}</p>
@@ -163,13 +163,17 @@ export default function Experience() {
                                             <div id={`dot-ex-${i}`} className={currentTheme === 'dark' ? "rounded-full w-1 h-1 bg-[var(--dm-secondary-color)]" : "rounded-full w-1 h-1 bg-[var(--lm-secondary-color)]"}></div>
                                         )}
                                     </div>
-                                    <div className={currentTheme === 'dark' ? "mt-8 sm:mt-0 sm:ml-8 flex flex-col sm:w-8/12 w-full justify-evenly" : "mt-8 sm:mt-0 sm:ml-8 flex flex-col sm:w-8/12 w-full justify-evenly"}>
-                                        <div>{e.description}</div>
-                                        {i === 0 ? <span className="mt-2"><span className="text-4xl align-middle leading-[1rem]">☞ </span>For a full list of projects, please visit my <a href="http://www.linkedin.com/in/jensmatthiaschk"
+                                    <div className={currentTheme === 'dark' ? "mt-8 sm:mt-0 sm:ml-8 flex flex-col sm:w-8/12 w-full justify-center" : "mt-8 sm:mt-0 sm:ml-8 flex flex-col sm:w-8/12 w-full justify-center"}>
+                                        <div className="py-2 align-middle">{e.description}</div>
+                                        {i === 0 ? <span className="py-2 align-middle"><span className="text-4xl align-middle leading-[1rem]">☞ </span>For a full list of projects, please visit my <a href="http://www.linkedin.com/in/jensmatthiaschk"
                                             target="_newBrowserTab"
-                                            rel="noopener">linkedIn</a> or <a href="https://www.imdb.com/name/nm4456056/"
-                                                target="_newBrowserTab"
-                                                rel="noopener">IMDB</a> profile.</span> : ""}
+                                            rel="noopener"
+                                            className={currentTheme === 'dark' ? "hover:text-cyan-600 ease-in-out delay-50 duration-200" : "hover:drop-shadow-[2px_2px_0_var(--lm-third-color)] ease-in-out delay-50 duration-200"}>linkedIn
+                                        </a> or <a href="https://www.imdb.com/name/nm4456056/"
+                                            target="_newBrowserTab"
+                                            rel="noopener"
+                                            className={currentTheme === 'dark' ? "hover:text-cyan-600 ease-in-out delay-50 duration-200" : "hover:drop-shadow-[2px_2px_0_var(--lm-third-color)] ease-in-out delay-50 duration-200"}>IMDB
+                                            </a> profile.</span> : ""}
                                     </div>
                                 </div>)
                         }
