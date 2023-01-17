@@ -6,7 +6,7 @@ import { educationAndTraining, professionalExperience } from "../../data/experie
 export default function Experience() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.25 })
+    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.2 })
     const { ref: skillsRef, inView: skillsIsVisible } = useInView({ threshold: 0 })
     const { ref: educationTrainingRef, inView: educationTrainingIsVisible } = useInView({ threshold: 0 })
     const { ref: professionalExperienceRef, inView: professionalExperienceIsVisible } = useInView({ threshold: 0 })
@@ -89,17 +89,18 @@ export default function Experience() {
                         {educationAndTraining.map((e, i) => {
 
                             const dots = useRef(null)
-                            const [multiplier, setMultiplier] = useState(10)
+                            const [multiplier, setMultiplier] = useState(20)
 
                             useEffect(() => {
+
                                 const height = dots.current.offsetHeight
                                 const width = dots.current.offsetWidth
                                 console.log({ height, width })
-                                if (experienceIsVisible === true && width === 4 && height >= 5) {
+                                if (experienceIsVisible === true && width < 5 && height >= 5) {
                                     const multiplierCalc = Math.round(height / 8)
                                     setMultiplier(multiplierCalc)
                                 }
-                                else if (experienceIsVisible === true && height === 4 && width >= 5) {
+                                else if (experienceIsVisible === true && height < 5 && width >= 5) {
                                     const multiplierCalc = Math.round(width / 8)
                                     setMultiplier(multiplierCalc)
                                 }
@@ -133,16 +134,17 @@ export default function Experience() {
                         {professionalExperience.map((e, i) => {
 
                             const dots = useRef(null)
-                            const [multiplier, setMultiplier] = useState(10)
+                            const [multiplier, setMultiplier] = useState(20)
 
                             useEffect(() => {
+
                                 const height = dots.current.offsetHeight
                                 const width = dots.current.offsetWidth
-                                if (experienceIsVisible === true && width === 4 && height >= 5) {
+                                if (experienceIsVisible === true && width < 5 && height >= 5) {
                                     const multiplierCalc = Math.round(height / 8)
                                     setMultiplier(multiplierCalc)
                                 }
-                                else if (experienceIsVisible === true && height === 4 && width >= 5) {
+                                else if (experienceIsVisible === true && height < 5 && width >= 5) {
                                     const multiplierCalc = Math.round(width / 8)
                                     setMultiplier(multiplierCalc)
                                 }
