@@ -6,7 +6,7 @@ import { educationAndTraining, professionalExperience } from "../../data/experie
 export default function Experience() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.1 })
+    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.15 })
     const { ref: skillsRef, inView: skillsIsVisible } = useInView({ threshold: 0 })
     const { ref: educationTrainingRef, inView: educationTrainingIsVisible } = useInView({ threshold: 0 })
     const { ref: professionalExperienceRef, inView: professionalExperienceIsVisible } = useInView({ threshold: 0 })
@@ -20,8 +20,8 @@ export default function Experience() {
             <section id="Experience" ref={experienceRef} className="flex flex-col h-fit items-center mb-20 sm:mx-16 mx-8">
                 <div>
                     <div className="h-32 w-full transparent ml-10">
-                        <h3 className={currentTheme === 'dark' ? "text-4xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2"
-                            : "text-4xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Experience</h3>
+                        <h2 className={currentTheme === 'dark' ? "text-4xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2"
+                            : "text-4xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Experience</h2>
                     </div>
                     <div ref={skillsRef} id="Skills" className={skillsIsVisible ? "flex flex-col items-center fade-in mx-auto mt-4 sm:mt-28" : "text-center mt-4 sm:mt-28 invisible"}>
                         <h3 className={currentTheme === 'dark' ? "text-3xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] mb-6"

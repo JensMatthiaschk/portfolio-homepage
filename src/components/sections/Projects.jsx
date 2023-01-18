@@ -7,7 +7,7 @@ import { projects, otherProjects } from "../../data/projectsData.js"
 export default function Projects() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.4 })
+    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 })
     const { ref: cardRef, inView: cardIsVisible } = useInView({ threshold: 0 })
     const [otherProjectsVisible, setOtherProjectsVisible] = useState(false)
     const [openState, setOpenState] = useState(false)
@@ -29,9 +29,9 @@ export default function Projects() {
 
     return (
         <>
-            <section id="Projects" ref={projectsRef} className="flex flex-col h-full transition-all items-center sm:mx-16 mx-8 mb-10">
+            <section id="Projects" ref={projectsRef} className="flex flex-col h-full transition-all items-center sm:mx-20 mx-8 mb-10 justify-center">
                 <div className="h-32 w-full transparent ml-20">
-                    <h3 className={currentTheme === "dark" ? "text-4xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2" : "text-4xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Projects</h3>
+                    <h2 className={currentTheme === "dark" ? "text-4xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2" : "text-4xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Projects</h2>
                 </div>
                 <div ref={cardRef} className={cardIsVisible ? "fade-in flex flex-col sm:mt-20 mt-3 items-center sm:gap-y-16" : "flex flex-col sm:mt-20 mt-3 items-center gap-y-16 invisible"}>
                     <div className="flex flex-col items-center">
