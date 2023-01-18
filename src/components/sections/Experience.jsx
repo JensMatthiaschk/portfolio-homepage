@@ -6,7 +6,7 @@ import { educationAndTraining, professionalExperience } from "../../data/experie
 export default function Experience() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.2 })
+    const { ref: experienceRef, inView: experienceIsVisible } = useInView({ threshold: 0.1 })
     const { ref: skillsRef, inView: skillsIsVisible } = useInView({ threshold: 0 })
     const { ref: educationTrainingRef, inView: educationTrainingIsVisible } = useInView({ threshold: 0 })
     const { ref: professionalExperienceRef, inView: professionalExperienceIsVisible } = useInView({ threshold: 0 })
@@ -104,7 +104,7 @@ export default function Experience() {
                                     const multiplierCalc = Math.round(width / 8)
                                     setMultiplier(multiplierCalc)
                                 }
-                            }, [experienceIsVisible])
+                            }, [educationTrainingIsVisible])
 
                             return (
                                 <div key={`ed-${i}`} className={currentTheme === "dark" ? "h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
@@ -148,7 +148,7 @@ export default function Experience() {
                                     const multiplierCalc = Math.round(width / 8)
                                     setMultiplier(multiplierCalc)
                                 }
-                            }, [experienceIsVisible])
+                            }, [professionalExperienceIsVisible])
 
                             console.log("MULTIPLIER SET", multiplier)
 
