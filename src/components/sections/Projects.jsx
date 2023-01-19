@@ -7,7 +7,7 @@ import { projects, otherProjects } from "../../data/projectsData.js"
 export default function Projects() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 })
+    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.4 })
     const { ref: cardRef, inView: cardIsVisible } = useInView({ threshold: 0 })
     const [otherProjectsVisible, setOtherProjectsVisible] = useState(false)
     const [openState, setOpenState] = useState(false)
@@ -29,11 +29,12 @@ export default function Projects() {
 
     return (
         <>
-            <section id="Projects" ref={projectsRef} className="flex flex-col h-full transition-all items-center sm:mx-20 mx-8 mb-10 justify-center">
-                <div className="h-32 w-full transparent ml-20">
-                    <h2 className={currentTheme === "dark" ? "text-4xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2" : "text-4xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Projects</h2>
+            <section id="Projects" ref={projectsRef} className="flex flex-col h-fit transition-all items-center sm:mx-20 mx-8 mb-40 md:mb-60 justify-center">
+                <div className="h-32 self-start ml-10 md:ml-32">
+                    <h2 className={currentTheme === 'dark' ? "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2"
+                        : "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Projects</h2>
                 </div>
-                <div ref={cardRef} className={cardIsVisible ? "fade-in flex flex-col sm:mt-20 mt-3 items-center sm:gap-y-16" : "flex flex-col sm:mt-20 mt-3 items-center gap-y-16 invisible"}>
+                <div ref={cardRef} className={cardIsVisible ? "fade-in flex flex-col sm:mt-32 mt-3 items-center sm:gap-y-16" : "flex flex-col sm:mt-32 mt-3 items-center gap-y-16 invisible"}>
                     <div className="flex flex-col items-center">
                         <div className="gap-6 flex flex-wrap justify-center">
                             {projects.map((p, i) => {
@@ -139,7 +140,7 @@ export default function Projects() {
                                 }
 
                                 return (
-                                    <div key={`otherProject-${i}`} className={currentTheme === "dark" ? "card max-w-[20rem] h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200"
+                                    <div key={`otherProject-${i}`} className={currentTheme === "dark" ? "card max-w-[20rem] h-full border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200"
                                         : "card max-w-[20rem] h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-300"}>
                                         {p.img_url ? <figure className="h-[11.1rem] m-[0.4rem] rounded">
                                             <img src={p.img_url} alt={`Project-${i + 1}`} />
