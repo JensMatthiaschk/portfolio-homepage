@@ -49,7 +49,7 @@ export default function Contact() {
 
     return (
         <>
-            <section id="Contact" className="flex flex-col lg:mx-10 justify-between sm:h-screen">
+            <section id="Contact" className="flex flex-col lg:mx-10 justify-between sm:h-full">
                 <div ref={contactRef} className={contactIsVisible ? "fade-in sm:mt-20 mb-12 sm:ml-10 px-10 lg:text-3xl 2xl:text-4xl sm:text-2xl text-md font-['Montserrat'] text-center font-medium lg:w-[70%] lg:mx-auto" : "sm:mt-20 mt-12 sm:ml-10 px-10 sm:text-2xl text-xl font-['Montserrat'] invisible text-right font-medium"}>
                     <h1 className={currentTheme === 'dark' ? "text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] sm:mb-10 mb-3"
                         : "text-3xl lg:text-4xl 2xl:text-5xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] sm:mb-10 mb-3"}>
