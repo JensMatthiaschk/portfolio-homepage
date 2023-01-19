@@ -7,7 +7,7 @@ import { projects, otherProjects } from "../../data/projectsData.js"
 export default function Projects() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.4 })
+    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 })
     const { ref: cardRef, inView: cardIsVisible } = useInView({ threshold: 0 })
     const [otherProjectsVisible, setOtherProjectsVisible] = useState(false)
     const [openState, setOpenState] = useState(false)

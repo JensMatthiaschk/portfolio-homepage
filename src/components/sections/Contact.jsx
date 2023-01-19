@@ -7,7 +7,7 @@ export default function Contact() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive, contactVisitedLight, setContactVisitedLight, contactVisitedDark, setContactVisitedDark } = useContext(ThemeContext)
     const { ref: drawingRef, inView: drawingIsVisible } = useInView({ threshold: 0 });
-    const { ref: contactRef, inView: contactIsVisible } = useInView({ threshold: 0 });
+    const { ref: contactRef, inView: contactIsVisible } = useInView({ threshold: 0.1 });
     const [drawingSource, setDrawingSource] = useState('')
     const [portraitSource, setPortraitSource] = useState('')
     const [counterLight, setCounterLight] = useState(0)

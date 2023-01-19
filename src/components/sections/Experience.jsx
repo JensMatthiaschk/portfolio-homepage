@@ -23,7 +23,7 @@ export default function Experience() {
                         <h2 className={currentTheme === 'dark' ? "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2"
                             : "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Experience</h2>
                     </div>
-                    <div ref={skillsRef} id="Skills" className={skillsIsVisible ? "flex flex-col items-center fade-in mx-auto mt-4 sm:mt-28 md:mt-40" : "text-center mt-4 sm:mt-28 md:mt-40 invisible"}>
+                    <div ref={skillsRef} id="Skills" className={skillsIsVisible ? "flex flex-col items-center fade-in mx-auto mt-4 sm:mt-28 md:mt-40" : "flex flex-col items-center mx-auto mt-4 sm:mt-28 md:mt-40 invisible"}>
                         <h3 className={currentTheme === 'dark' ? "text-3xl md:text-4xl xl:text-5xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] mb-6"
                             : "text-3xl md:text-4xl xl:text-5xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] mb-6"}>Skills</h3>
                         <div className="flex sm:gap-x-4 gap-x-2 sm:gap-y-2 items-center justify-center flex-wrap transition-all px-3 my-10">

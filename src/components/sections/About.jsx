@@ -6,7 +6,7 @@ import { Link } from "react-scroll";
 export default function About() {
 
     const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: aboutRef, inView: aboutIsVisible } = useInView({ threshold: 0.3 });
+    const { ref: aboutRef, inView: aboutIsVisible } = useInView({ threshold: 0.5 });
 
 
     useEffect(() => {
