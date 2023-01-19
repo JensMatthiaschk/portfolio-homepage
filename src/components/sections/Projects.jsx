@@ -34,7 +34,7 @@ export default function Projects() {
                     <h2 className={currentTheme === 'dark' ? "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2"
                         : "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Projects</h2>
                 </div>
-                <div ref={cardRef} className={cardIsVisible ? "fade-in flex flex-col sm:mt-32 mt-3 items-center sm:gap-y-16" : "flex flex-col sm:mt-32 mt-3 items-center gap-y-16 invisible"}>
+                <div ref={cardRef} className={cardIsVisible ? "fade-in flex flex-col sm:mt-32 mt-3 items-center sm:gap-y-16 h-fit" : "flex flex-col sm:mt-32 mt-3 items-center gap-y-16 h-fit invisible"}>
                     <div className="flex flex-col items-center">
                         <div className="gap-6 flex flex-wrap justify-center">
                             {projects.map((p, i) => {
