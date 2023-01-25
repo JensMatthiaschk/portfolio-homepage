@@ -15,7 +15,7 @@ export const projects = [
         techstack_front: ["React", "Tailwind CSS", "Daisy UI", "Netlify"],
         techstack_back: ["Node.js", "Express.js", "MongoDB", "AWS S3", "Railway"],
         page_url: "https://superlative-dieffenbachia-8c430f.netlify.app/",
-        // repo_url: "https://github.com/JensMatthiaschk/bici-frontend",
+        repo_url: "",
         contributors: [
             {
                 name: "Fabian Eichelbrönner",
@@ -59,7 +59,7 @@ export const otherProjects = [
         title: "Travel Blog",
         description: "In this project we were introduced to the Contenful Content Management Systems (CMS) which we used to create dummy travel destination content and fetch it in our frontend from the API provided by the CMS. Later we stored the Contentful data on our own PostgreSQL database. We used React Router and more advanced hooks like useParams and useContext.",
         techstack_front: ["React", "Tailwind CSS", "Daisy UI"],
-        techstack_back: ["Node.js", "Express.js", "PostgreSQL"],
+        techstack_back: ["Headless CMS", "Node.js", "Express.js", "PostgreSQL"],
         page_url: "",
         repo_url: "https://github.com/JensMatthiaschk/react-travel-blog",
         contributors: [

@@ -170,11 +170,11 @@ export default function Experience() {
                                         {i === 0 ? <span className="py-2 align-middle"><span className="text-4xl align-middle leading-[1rem]">☞ </span>For a full list of projects, please visit my <a href="http://www.linkedin.com/in/jensmatthiaschk"
                                             target="_newBrowserTab"
                                             rel="noopener"
-                                            className={currentTheme === 'dark' ? "hover:text-cyan-600 ease-in-out delay-50 duration-200" : "hover:drop-shadow-[2px_2px_0_var(--lm-third-color)] ease-in-out delay-50 duration-200"}>linkedIn
+                                            className={currentTheme === 'dark' ? "hover:text-cyan-600 profile-link-dark" : "hover:drop-shadow-[2px_2px_0_var(--lm-third-color)]  profile-link-light"}>linkedIn
                                         </a> or <a href="https://www.imdb.com/name/nm4456056/"
                                             target="_newBrowserTab"
                                             rel="noopener"
-                                            className={currentTheme === 'dark' ? "hover:text-cyan-600 ease-in-out delay-50 duration-200" : "hover:drop-shadow-[2px_2px_0_var(--lm-third-color)] ease-in-out delay-50 duration-200"}>IMDB
+                                            className={currentTheme === 'dark' ? "hover:text-cyan-600 profile-link-dark" : "hover:drop-shadow-[2px_2px_0_var(--lm-third-color)] profile-link-light"}>IMDB
                                             </a> profile.</span> : ""}
                                     </div>
                                 </div>)
