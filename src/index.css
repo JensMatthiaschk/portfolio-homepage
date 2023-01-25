@@ -243,65 +243,22 @@ Add gif as div background, put text layer on top and add these css attributes to
     padding-bottom:0;
   }
 
-
-  
-  .nice-border-light {
-  /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
-  border-style: dotted; 
-  border-color: #212121; 
-  border-image-source: url('images/dots_light.svg');
-  border-image-slice: 33% 33%;
-  border-image-repeat: round;
-  border-left-width: 2rem;
-  }
-
-  .nice-border-dark {
-  /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
-   border-style: dotted; 
-  border-color: #b5a887; 
-  border-image-source: url('images/dots_dark.svg');
-  border-image-slice: 33% 33%;
-  border-image-repeat: round;
-  border-left-width: 2rem;
-  }
   
 
-  @media only screen and (max-width: 639px) {
-  .nice-border-light {
-  /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
-  border-style: dotted; 
-  border-color: #212121; 
-  border-image-source: url('images/dots_light.svg');
-  border-image-slice: 33% 33%;
-  border-image-repeat: round;
-  border-top-width: 0.5rem;
-  border-left-width: 0;
- 
-  }
-
-  .nice-border-dark {
-  /* Safari & Chrome need border-style and border-color ¯\_(ツ)_/¯ */
-   border-style: dotted; 
-  border-color: #b5a887; 
-  border-image-source: url('images/dots_dark.svg');
-  border-image-slice: 33% 33%;
-  border-image-repeat: round;
-  border-top-width: 0.5rem;
-  border-left-width: 0;
-  }
-  }
-
-  a.profile-link-dark::after {
-  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='%23b5a887' ><path strokeLinecap='round' strokeLinejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /></svg> ");
-  width: 20px;
-  height: 20px;
+  @media (width < 639px) {
+a.profile-link-dark::after, a.profile-link-light::after {
+    width: 18px;
   display: inline-block;
   z-index: 2;
   position: relative;
   margin-right: 3px;
   padding: 0;
-  top: 2.5px;
-  left: 3px;
+  top: 2px;
+  left: 2px;
+}
+
+   a.profile-link-dark::after {
+  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='%23b5a887' ><path strokeLinecap='round' strokeLinejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /></svg> ");
   }
 
    a.profile-link-dark:hover::after {
@@ -310,8 +267,17 @@ Add gif as div background, put text layer on top and add these css attributes to
 
     a.profile-link-light::after {
   content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='%23212121' ><path strokeLinecap='round' strokeLinejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /></svg> ");
-  width: 20px;
-  height: 20px;
+  }
+
+   a.profile-link-light:hover::after {
+filter: drop-shadow(0.5px 0.5px 1px #DBFE87);  
+}
+  }
+
+  @media (width > 639px) {
+
+    a.profile-link-dark::after, a.profile-link-light::after {
+width: 20px;
   display: inline-block;
   z-index: 2;
   position: relative;
@@ -319,8 +285,21 @@ Add gif as div background, put text layer on top and add these css attributes to
   padding: 0;
   top: 2.5px;
   left: 3px;
+    }
+
+  a.profile-link-dark::after {
+  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='%23b5a887' ><path strokeLinecap='round' strokeLinejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /></svg> ");
+  }
+
+   a.profile-link-dark:hover::after {
+  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='%230891b2' ><path strokeLinecap='round' strokeLinejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /></svg> ");
+}
+
+    a.profile-link-light::after {
+  content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='%23212121' ><path strokeLinecap='round' strokeLinejoin='round' d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25' /></svg> ");
   }
 
    a.profile-link-light:hover::after {
 filter: drop-shadow(0.5px 0.5px 1px #DBFE87);  
+}
 }
