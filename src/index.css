@@ -300,9 +300,8 @@ Add gif as div background, put text layer on top and add these css attributes to
   position: relative;
   margin-right: 3px;
   padding: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 2px;
+  top: 2.5px;
+  left: 3px;
   }
 
    a.profile-link-dark:hover::after {
@@ -318,9 +317,8 @@ Add gif as div background, put text layer on top and add these css attributes to
   position: relative;
   margin-right: 3px;
   padding: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 2px;
+  top: 2.5px;
+  left: 3px;
   }
 
    a.profile-link-light:hover::after {
