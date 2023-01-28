@@ -1,6 +1,6 @@
 export const projects = [
     {
-        img_url: "/images/Portfolio_Homepage.png",
+        img_url: "/images/Screencast_PH_320.gif",
         title: "Portfolio Homepage",
         description: "A single-page-application which you're currently viewing. It mostly uses frontend code but also a backend component for handling the contact form.",
         techstack_front: ["React", "Tailwind CSS", "Daisy UI", "Netlify"],

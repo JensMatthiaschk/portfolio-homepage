@@ -303,3 +303,24 @@ width: 20px;
 filter: drop-shadow(0.5px 0.5px 1px #DBFE87);  
 }
 }
+
+/* @media (width > 639px) {
+
+.info-container::before {
+  content:'';
+width: 100px;
+height: 50px;
+background-color: red;
+position: relative;
+border-radius: 50%;
+
+}
+.info-container::after {
+  content: '';
+width: 100px;
+height:100px;
+background-color: red;
+position: relative;
+top: 50%;
+}
+} */

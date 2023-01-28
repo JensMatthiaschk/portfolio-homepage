@@ -153,7 +153,7 @@ export default function Experience() {
                             console.log("MULTIPLIER SET", multiplier)
 
                             return (
-                                <div key={`ex-${i}`} className={currentTheme === "dark" ? "w-full h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
+                                <div key={`ex-${i}`} className={currentTheme === "dark" ? "info-container w-full h-fit border-cyan-900 border-solid border-2 bg-[var(--dm-glow-color)] hover:shadow-[0_5px_8px_2px_var(--dm-third-color)] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"
                                     : "w-full h-fit bg-stone-200 hover:shadow-[0_2px_10px_1px_DimGrey] rounded-md ease-in-out delay-50 duration-200 mt-6 text-left p-6 flex flex-col sm:flex-row justify-evenly"}>
                                     <div className="flex flex-col gap-y-3 sm:w-4/12 w-full justify-center sm:mr-8 sm:mb-0 mb-8">
                                         <h3 className="font-extrabold text-xl">{e.position}</h3>

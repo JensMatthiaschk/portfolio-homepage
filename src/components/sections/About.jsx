@@ -19,7 +19,7 @@ export default function About() {
                 className="flex h-screen lg:ml-36 lg:pl-4 sm:ml-20 px-8 mb-20 flex-col justify-center overflow-hidden"
             >
                 <h2 className="font-['Montserrat'] md:text-3xl sm:text-2xl text-xl">Hi, I'm</h2>
-                <h1 className="font-['Montserrat'] md:text-8xl sm:text-5xl text-4xl font-extrabold w-auto">Jens Matthiaschk</h1>
+                <h1 className="font-['Montserrat'] md:text-8xl sm:text-5xl text-4xl font-extrabold w-auto" translate="no">Jens Matthiaschk</h1>
                 <h2 className="font-['Montserrat'] md:text-6xl sm:text-4xl text-2xl md:mt-5 mt-2">web developer</h2>
                 <p className="text-sm sm:text-base my-8 font-['Montserrat'] font-medium lg:w-[80%] w-[90%]">I recently transitioned from the film industry to tech and am now actively looking for new challenges and exciting projects. With code I can write my own scripts with immediate results on screen which hopefully make a positive impact and help people. I always strive for the balance between intuitive yet beautifully designed interfaces while simultaneously maximizing performance and scalebility on my applications. I'm naturally curious and am working continuously on improving myself to become a better developer on whom people and businesses can rely.</p>
                 <div className="md:mt-10 sm:mt-8 mt-5 flex sm:flex-row flex-col gap-y-3">

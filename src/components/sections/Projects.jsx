@@ -78,10 +78,10 @@ export default function Projects() {
                                             <button className={`less-button-${i} badge text-xs btn-outline text-current w-fit place-self-end hidden`} onClick={toggleMoreText}>less</button>
                                             <div className="card-actions flex place-content-start justify-end h-16 p-0 mt-6">
                                                 {p.techstack_front.map((e, i) =>
-                                                    <div key={`frontend-badge-${i}`} className="badge badge-sm badge-outline badge-info relative">{e}</div>
+                                                    <div key={`frontend-badge-${i}`} className="badge badge-sm badge-outline badge-info relative" translate="no">{e}</div>
                                                 )}
                                                 {p.techstack_back.map((e, i) =>
-                                                    <div key={`backend-badge-${i}`} className="badge badge-sm badge-outline badge-success">{e}</div>
+                                                    <div key={`backend-badge-${i}`} className="badge badge-sm badge-outline badge-success" translate="no">{e}</div>
                                                 )}
                                             </div>
                                             <div className="flex gap-x-1 items-center mt-1 h-4">
@@ -179,12 +179,12 @@ export default function Projects() {
                                             <button className={`op-less-button-${i} badge text-xs text-current btn-outline w-fit place-self-end hidden`} onClick={toggleMoreText}>less</button>
                                             <div className="card-actions flex place-content-start justify-end h-10 mt-2">
                                                 {p.techstack_front.map((e, i) =>
-                                                    <div key={`frontend-badge-${i}`} className="badge badge-sm badge-outline badge-info relative">
+                                                    <div key={`frontend-badge-${i}`} className="badge badge-sm badge-outline badge-info relative" translate="no">
                                                         {e}</div>
                                                 )}
                                                 {p.techstack_back.map((e, i) =>
                                                     <div key={`backend-badge-${i}`}
-                                                        className="badge badge-sm badge-outline badge-success">
+                                                        className="badge badge-sm badge-outline badge-success" translate="no">
                                                         {e}</div>
                                                 )}
                                             </div>
