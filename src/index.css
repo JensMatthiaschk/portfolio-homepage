@@ -304,6 +304,38 @@ filter: drop-shadow(0.5px 0.5px 1px #DBFE87);
 }
 }
 
+.skill::after {
+  content: attr(data-content);
+  opacity:0; 
+    transition: 0.3s;
+    position: relative;
+    margin-top: 4px;
+}
+
+.skill:hover::after {
+  content: attr(data-content);
+  color: currentColor;
+  opacity: 1;
+}
+
+.dot-section::before {
+  content: attr(dot-description);
+  color: currentColor;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    right: 25px;
+    bottom: 3px;
+    opacity: 0;
+    transition: ease-out 1s;
+    transition-delay: 1s;
+}
+
+.dot-section:hover::before {
+  opacity:1; 
+}
+
 /* @media (width > 639px) {
 
 .info-container::before {

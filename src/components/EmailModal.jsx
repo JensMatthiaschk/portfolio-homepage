@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react'
 import { ThemeContext } from './ThemeContext';
 import { postEmail } from '../data/emailController';
+import { TailSpin } from 'react-loader-spinner';
 
 export default function EmailModal() {
     const { currentTheme } = useContext(ThemeContext)
@@ -11,9 +12,11 @@ export default function EmailModal() {
     });
 
     const [postEmailResponse, setPostEmailResponse] = useState({})
+    const [loading, setLoading] = useState(false)
 
     const onSubmit = async (e) => {
         try {
+            setLoading(true)
             e.preventDefault();
             setPostEmailResponse('')
             const data = {
@@ -40,8 +43,10 @@ export default function EmailModal() {
     };
 
     useEffect(() => {
-        if (postEmailResponse.ok)
+        if (postEmailResponse.ok) {
             document.querySelector('.emailFormButton').classList.toggle('hidden');
+            setLoading(false)
+        }
     }, [postEmailResponse])
 
     return (
@@ -81,6 +86,16 @@ export default function EmailModal() {
                             onChange={handleChange}
                         />
                         <button className="emailFormButton btn btn-sm" type='submit'>Submit</ button >
+                        {loading === true ? <TailSpin
+                            height="1rem"
+                            width="1rem"
+                            color="currentColor"
+                            ariaLabel="tail-spin-loading"
+                            radius="1"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                            visible={true}
+                        /> : ''}
                         {postEmailResponse.ok === true && <p className="text-green-600">Email sent successfully!</p>}
                         {postEmailResponse.ok === false && <p className="text-red-600">An Error occurred! Email was not sent🥺</p>}
                     </form>

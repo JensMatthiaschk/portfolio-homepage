@@ -1,20 +1,24 @@
 import { ThemeContext } from "../ThemeContext.jsx"
 import { useContext, useEffect, useState, useRef } from "react"
 import { useInView } from "react-intersection-observer"
-import { projects, otherProjects } from "../../data/projectsData.js"
+// import { projects, otherProjects } from "../../data/projectsData.js"
+import { useTranslation } from "react-i18next"
 
 
 export default function Projects() {
 
-    const { currentTheme, setCurrentTheme, sectionActive, setSectionActive } = useContext(ThemeContext)
-    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 })
-    const { ref: cardRef, inView: cardIsVisible } = useInView({ threshold: 0 })
-    const [otherProjectsVisible, setOtherProjectsVisible] = useState(false)
-    const [openState, setOpenState] = useState(false)
+    const { currentTheme, setSectionActive } = useContext(ThemeContext);
+    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 });
+    const { ref: cardRef, inView: cardIsVisible } = useInView({ threshold: 0 });
+    const [otherProjectsVisible, setOtherProjectsVisible] = useState(false);
+    const [openState, setOpenState] = useState(false);
+    const { t } = useTranslation();
+    const projects = t('projects.content', { returnObjects: true })
+    const otherProjects = t('otherProjects.content', { returnObjects: true })
 
 
     useEffect(() => {
-        if (projectsIsVisible === true) setSectionActive('Projects')
+        if (projectsIsVisible === true) setSectionActive(t('projects.section_title'))
     }, [projectsIsVisible, cardIsVisible])
 
 
@@ -29,10 +33,10 @@ export default function Projects() {
 
     return (
         <>
-            <section id="Projects" ref={projectsRef} className="flex flex-col h-fit transition-all items-center sm:mx-20 mx-8 mb-40 md:mb-60 justify-center">
+            <section id={t('projects.section_title')} ref={projectsRef} className="flex flex-col h-fit transition-all items-center sm:mx-20 mx-8 mb-40 md:mb-60 justify-center">
                 <div className="h-32 self-start ml-10 md:ml-32">
                     <h2 className={currentTheme === 'dark' ? "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] -skew-y-12 p-2"
-                        : "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>Projects</h2>
+                        : "text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] -skew-y-12 p-2"}>{t('projects.section_title')}</h2>
                 </div>
                 <div ref={cardRef} className={cardIsVisible ? "fade-in flex flex-col sm:mt-32 mt-3 items-center sm:gap-y-16 h-fit" : "flex flex-col sm:mt-32 mt-3 items-center gap-y-16 h-fit invisible"}>
                     <div className="flex flex-col items-center">
@@ -65,7 +69,7 @@ export default function Projects() {
                                                         {p.contributors.map((e, i) =>
                                                             <>
                                                                 <a key={`contributor-${i}`} className={currentTheme === 'dark' ? "text-xs font-extralight badge mx-2 hover:bg-cyan-900 text-[var(--dm-secondary-color)] border-[var(--dm-secondary-color)]" : "text-xs font-extralight badge mx-2 hover:text-[var(--lm-third-color)]"} href={e.github_url} target="_newBrowserTab"
-                                                                    rel="noopener">{e.name}
+                                                                    rel="noopener" translate="no">{e.name}
                                                                     <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-3 w-3" fill="currentColor" viewBox="0 0 16 16">
                                                                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                                                                     </svg></a>
@@ -74,8 +78,8 @@ export default function Projects() {
                                                     </div>
                                                     : ""}
                                             </div>
-                                            <button className={`more-button-${i} badge text-xs btn-outline text-current w-fit place-self-end`} onClick={toggleMoreText}>more</button>
-                                            <button className={`less-button-${i} badge text-xs btn-outline text-current w-fit place-self-end hidden`} onClick={toggleMoreText}>less</button>
+                                            <button className={`more-button-${i} badge text-xs btn-outline text-current w-fit place-self-end`} onClick={toggleMoreText}>{t('project_button_more')}</button>
+                                            <button className={`less-button-${i} badge text-xs btn-outline text-current w-fit place-self-end hidden`} onClick={toggleMoreText}>{t('project_button_less')}</button>
                                             <div className="card-actions flex place-content-start justify-end h-16 p-0 mt-6">
                                                 {p.techstack_front.map((e, i) =>
                                                     <div key={`frontend-badge-${i}`} className="badge badge-sm badge-outline badge-info relative" translate="no">{e}</div>
@@ -119,16 +123,16 @@ export default function Projects() {
                             <button
                                 onClick={openOtherProjects}
                                 className={currentTheme === "dark" ? "badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] transform-gpu" : "badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] transform-gpu"}>
-                                Hide Others</button> :
+                                {t('otherProjects_button_close')}</button> :
                             <button
                                 onClick={openOtherProjects}
                                 className={currentTheme === "dark" ? "badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-dark w-fit hover:drop-shadow-[0_0_10px_var(--dm-third-color)] transform-gpu" : "badge p-4 sm:badge-lg badge-md sm:p-6 sm:text-2xl font-semibold badge-outline btn-light hover:drop-shadow-[0_0_10px_var(--lm-third-color)] transform-gpu"}>
-                                Show Others</button>}
+                                {t('otherProjects_button_open')}</button>}
                     </div>
                     {otherProjectsVisible &&
                         <div className="fade-in flex h-fit gap-6 flex-wrap justify-center mt-5 mb-10">
                             <div className="text-center my-5 sm:text-xl mb-10 w-full">
-                                <p className="sm:w-[60%] mx-auto">Since I'm at a very early stage of my newly started career, my portfolio is too. But I wanted demonstrate some of the new skills I put into use working with other awesome new developers in the coding bootcamp.</p>
+                                <p className="sm:w-[60%] mx-auto">{t('otherProjects_disclaimer')}</p>
                             </div>
                             {otherProjects.map((p, i) => {
 
@@ -166,7 +170,7 @@ export default function Projects() {
                                                             Contributors:
                                                             {p.contributors.map((e, i) =>
                                                                 <a key={`contributor-${i}`} className={currentTheme === 'dark' ? "font-extralight text-xs badge mx-2 hover:bg-cyan-900 text-[var(--dm-secondary-color)] border-[var(--dm-secondary-color)]" : "font-extralight text-xs badge mx-2 hover:text-[var(--lm-third-color)]"} href={e.github_url} target="_newBrowserTab"
-                                                                    rel="noopener">{e.name}
+                                                                    rel="noopener" translate="no">{e.name}
                                                                     <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-3 w-3" fill="currentColor" viewBox="0 0 16 16">
                                                                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
                                                                     </svg></a>
@@ -175,8 +179,8 @@ export default function Projects() {
                                                         </>}
                                                 </div>
                                             </div>
-                                            <button className={`op-more-button-${i} badge text-xs text-current btn-outline w-fit place-self-end`} onClick={toggleMoreText}>more</button>
-                                            <button className={`op-less-button-${i} badge text-xs text-current btn-outline w-fit place-self-end hidden`} onClick={toggleMoreText}>less</button>
+                                            <button className={`op-more-button-${i} badge text-xs text-current btn-outline w-fit place-self-end`} onClick={toggleMoreText}>{t('project_button_more')}</button>
+                                            <button className={`op-less-button-${i} badge text-xs text-current btn-outline w-fit place-self-end hidden`} onClick={toggleMoreText}>{t('project_button_less')}</button>
                                             <div className="card-actions flex place-content-start justify-end h-10 mt-2">
                                                 {p.techstack_front.map((e, i) =>
                                                     <div key={`frontend-badge-${i}`} className="badge badge-sm badge-outline badge-info relative" translate="no">

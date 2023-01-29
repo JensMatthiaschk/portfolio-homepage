@@ -3,12 +3,14 @@ import LinkButtons from './LinkButtons.jsx';
 import NavButtons from './NavButtons.jsx';
 import { ThemeContext } from './ThemeContext.jsx';
 import { Link } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
 
     const btn = document.querySelector(".btn-toggle");
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-    const { currentTheme, setCurrentTheme } = useContext(ThemeContext)
+    const { currentTheme, setCurrentTheme } = useContext(ThemeContext);
+    const { t } = useTranslation();
 
 
     function handleToggle() {
@@ -47,10 +49,10 @@ export default function Navbar() {
                         </label>
                         <ul tabIndex="0"
                             className={currentTheme === 'dark' ? "menu menu-compact dropdown-content mt-3 p-2 bg-base-100 shadow rounded-box w-52" : "menu menu-compact dropdown-content mt-3 p-2 bg-stone-200 shadow rounded-box w-52"}>
-                            <li><Link to="About" spy={true} smooth={true} offset={50} duration={500}>About</Link></li>
-                            <li><Link to="Experience" spy={true} smooth={true} offset={0} duration={500}>Experience</Link></li>
-                            <li><Link to="Projects" spy={true} smooth={true} offset={0} duration={500}>Projects</Link></li>
-                            <li><Link to="Contact" spy={true} smooth={true} offset={0} duration={500}>Contact</Link></li>
+                            <li><Link to={t('about.section_title')} spy={true} smooth={true} offset={50} duration={500}>{t('about.section_title')}</Link></li>
+                            <li><Link to={t('experience.section_title')} spy={true} smooth={true} offset={0} duration={500}>{t('experience.section_title')}</Link></li>
+                            <li><Link to={t('projects.section_title')} spy={true} smooth={true} offset={0} duration={500}>{t('projects.section_title')}</Link></li>
+                            <li><Link to={t('contact.section_title')} spy={true} smooth={true} offset={0} duration={500}>{t('contact.section_title')}</Link></li>
                             <li>
                                 <button className="btn-toggle" onClick={handleToggle}>
                                     {currentTheme === "dark" &&
@@ -79,10 +81,10 @@ export default function Navbar() {
                 </div>
                 <div className="navbar-end hidden lg:flex lg:w-screen z-40">
                     <ul className="menu menu-horizontal px-1">
-                        <li><Link to="About" spy={true} smooth={true} offset={50} duration={500}>About</Link></li>
-                        <li><Link to="Experience" spy={true} smooth={true} offset={0} duration={500}>Experience</Link></li>
-                        <li><Link to="Projects" spy={true} smooth={true} offset={0} duration={500}>Projects</Link></li>
-                        <li><Link to="Contact" spy={true} smooth={true} offset={0} duration={500}>Contact</Link></li>
+                        <li><Link to={t('about.section_title')} spy={true} smooth={true} offset={50} duration={500}>{t('about.section_title')}</Link></li>
+                        <li><Link to={t('experience.section_title')} spy={true} smooth={true} offset={0} duration={500}>{t('experience.section_title')}</Link></li>
+                        <li><Link to={t('projects.section_title')} spy={true} smooth={true} offset={0} duration={500}>{t('projects.section_title')}</Link></li>
+                        <li><Link to={t('contact.section_title')} spy={true} smooth={true} offset={0} duration={500}>{t('contact.section_title')}</Link></li>
                         {currentTheme === "dark" &&
                             <li>
                                 <button className="btn-toggle" onClick={handleToggle}>

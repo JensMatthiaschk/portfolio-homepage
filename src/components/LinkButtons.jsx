@@ -1,19 +1,21 @@
 import { ThemeContext } from "./ThemeContext"
 import { useContext, useEffect } from "react"
 import EmailModal from "./EmailModal"
+import { useTranslation } from "react-i18next";
 
 export default function LinkButtons() {
 
     const { currentTheme, sectionActive, contactVisitedDark, contactVisitedLight } = useContext(ThemeContext)
+    const { t } = useTranslation();
 
 
     return (
         <>
             <div className={
-                sectionActive === 'Contact' && contactVisitedDark === 0 && currentTheme === 'dark' ? "linkButton-fade-out-animation sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden" :
-                    sectionActive === 'Contact' && contactVisitedLight === 0 && currentTheme === 'light' ? "linkButton-fade-out-animation sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden" :
-                        sectionActive === 'Contact' && contactVisitedDark !== 0 && currentTheme === 'dark' ? "fade-out sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden" :
-                            sectionActive === 'Contact' && contactVisitedLight !== 0 && currentTheme === 'light' ? "fade-out sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden" :
+                sectionActive === t('contact.section_title') && contactVisitedDark === 0 && currentTheme === 'dark' ? "linkButton-fade-out-animation sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden" :
+                    sectionActive === t('contact.section_title') && contactVisitedLight === 0 && currentTheme === 'light' ? "linkButton-fade-out-animation sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden" :
+                        sectionActive === t('contact.section_title') && contactVisitedDark !== 0 && currentTheme === 'dark' ? "fade-out sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden" :
+                            sectionActive === t('contact.section_title') && contactVisitedLight !== 0 && currentTheme === 'light' ? "fade-out sm:flex flex-col items-start justify-center h-screen fixed mx-5 sm:transition-all z-30 hidden" :
                                 "sm:flex flex-col items-start justify-center h-screen fixed mx-5 pb-20 mt-10 sm:transition-all z-30 hidden"
             }>
                 <ul className={currentTheme === 'dark' ? "text-[var(--dm-secondary-color)]" : "text-[var(--lm-secondary-color)]"} >

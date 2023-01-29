@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react"
 import { ThemeContext } from "../ThemeContext.jsx"
 import { useInView } from 'react-intersection-observer';
-import EmailModal from "../EmailModal.jsx";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
 
-    const { currentTheme, setCurrentTheme, sectionActive, setSectionActive, contactVisitedLight, setContactVisitedLight, contactVisitedDark, setContactVisitedDark } = useContext(ThemeContext)
+    const { currentTheme, setSectionActive, contactVisitedLight, setContactVisitedLight, contactVisitedDark, setContactVisitedDark } = useContext(ThemeContext)
     const { ref: drawingRef, inView: drawingIsVisible } = useInView({ threshold: 0 });
     const { ref: contactRef, inView: contactIsVisible } = useInView({ threshold: 0.1 });
     const [drawingSource, setDrawingSource] = useState('')
@@ -13,6 +13,7 @@ export default function Contact() {
     const [counterLight, setCounterLight] = useState(0)
     const [counterDark, setCounterDark] = useState(0)
     const year = new Date().getFullYear()
+    const { t } = useTranslation()
 
     // console.log("drawingIsVisible", drawingIsVisible)
     console.log("COUNTERLIGHT", counterLight)
@@ -21,13 +22,13 @@ export default function Contact() {
     useEffect(() => {
         setDrawingSource('')
         if (currentTheme === 'dark' && drawingIsVisible === true) {
-            setSectionActive('Contact')
+            setSectionActive(t('contact.section_title'))
             setDrawingSource('images/Drawing_dark_2.gif');
             setPortraitSource('images/PortraitDarkmode.png')
             setCounterDark(prev => prev + 1)
         }
         else if (currentTheme === 'light' && drawingIsVisible === true) {
-            setSectionActive('Contact')
+            setSectionActive(t('contact.section_title'))
             setDrawingSource('images/Drawing_light_2.gif');
             setPortraitSource('images/PortraitLightmode.png')
             setCounterLight(prev => prev + 1)
@@ -49,20 +50,20 @@ export default function Contact() {
 
     return (
         <>
-            <section id="Contact" className="flex flex-col lg:mx-10 justify-between sm:h-full">
+            <section id={t('contact.section_title')} className="flex flex-col lg:mx-10 justify-between sm:h-full">
                 <div ref={contactRef} className={contactIsVisible ? "fade-in sm:mt-20 mb-12 sm:ml-10 px-10 lg:text-3xl 2xl:text-4xl sm:text-2xl text-md font-['Montserrat'] text-center font-medium lg:w-[70%] lg:mx-auto" : "sm:mt-20 mt-12 sm:ml-10 px-10 sm:text-2xl text-xl font-['Montserrat'] invisible text-right font-medium"}>
                     <h1 className={currentTheme === 'dark' ? "text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] sm:mb-10 mb-3"
-                        : "text-3xl lg:text-4xl 2xl:text-5xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] sm:mb-10 mb-3"}>
-                        Let's connect!</h1>
-                    <span className="mr-2 w-fit">If you have a question, an exciting project or just want to talk about</span>
-                    <h2 className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}>Full-Stack Development</h2>
-                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}><p className="w-fit px-2 ease-in-out delay-100 duration-300"> UI/UX </p> Design</div>
+                        : "text-3xl lg:text-4xl 2xl:text-5xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] sm:mb-10 mb-3"} translate="no">
+                        {t('contact.header')}</h1>
+                    <span className="mr-2 w-fit">{t('contact.outro-1')}</span>
+                    <h2 className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"} translate="no">Full-Stack Development</h2>
+                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"} translate="no"><p className="w-fit px-2 ease-in-out delay-100 duration-300"> UI/UX </p> Design</div>
                     <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"} translate="no">Start-Up</div>
-                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}>New Technologies</div>
-                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}>Random <p className="w-fit hover:line-through px-2 ease-in-out delay-100 duration-300"> tech </p> topics</div>
-                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"} >Burgers</div>
-                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}><p className="w-fit hover:line-through pr-2 ease-in-out delay-100 duration-300"> Cocktail </p> Recipes</div>
-                    <span className="mr-2 w-fit"> let's have a chat!</span>
+                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}>{t('contact.topic-1')}</div>
+                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"} >{t('contact.topic-2')}<p className="w-fit hover:line-through px-2 ease-in-out delay-100 duration-300"> tech </p> {t('contact.topic-3')}</div>
+                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"} >{t('contact.topic-4')}</div>
+                    <div className={currentTheme === "dark" ? "badge font-extrabold 2xl:text-4xl md:text-2xl text-sm 2xl:p-5 md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--dm-secondary-color)] hover:text-[var(--dm-third-color)] border-[var(--dm-secondary-color)] hover:border-[var(--dm-third-color)] ease-in-out delay-50 duration-300" : "badge font-extrabold lg:text-2xl text-sm md:p-4 p-2 md:m-2 m-1 sm:badge-lg badge-sm badge-outline w-fit uppercase text-[var(--lm-secondary-color)] hover:text-[var(--lm-third-color)] border-[var(--lm-secondary-color)] hover:border-[var(--lm-third-color)] ease-in-out delay-50 duration-300"}><p className="w-fit hover:line-through pr-2 ease-in-out delay-100 duration-300" translate="no"> Cocktail </p> {t('contact.topic-5')}</div>
+                    <span className="mr-2 w-fit"> {t('contact.outro-2')}</span>
                 </div>
                 <div className="flex items-end justify-between lg:mx-12 xl:mx-32 2xl:mx-60">
                     {drawingIsVisible &&
@@ -136,7 +137,7 @@ export default function Contact() {
                                 <li><p className="md:hidden block text-xs pt-2">© {year}</p></li>
                             </ul>
                             <div className={(currentTheme === 'dark' && contactVisitedDark === 0) || (currentTheme === 'light' && contactVisitedLight === 0) ? "linkButton-fade-in-animation flex flex-col sm:text-sm text-[0.5rem] w-38 sm:ml-10 ml-3" : "fade-in flex flex-col sm:text-sm text-[0.5rem] w-38 sm:ml-10 ml-3"}>
-                                <p className="md:block hidden">Jens Matthiaschk © {year}</p>
+                                <p className="md:block hidden" translate="no">Jens Matthiaschk © {year}</p>
                                 <p className={(currentTheme === 'dark' && contactVisitedDark === 0) || (currentTheme === 'light' && contactVisitedLight === 0) ? "linkButton-fade-in-animation" : "hidden"}>Drawing by ai-draw.tokyo</p>
                             </div>
                         </div>}
