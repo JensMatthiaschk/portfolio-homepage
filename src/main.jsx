@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         ariaLabel="tail-spin-loading"
         radius="1"
         wrapperStyle={{}}
-        wrapperClass=""
+        wrapperclassName=""
         visible={true} />
     </div>}>
     <ThemeContextProvider>

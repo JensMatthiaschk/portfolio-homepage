@@ -93,7 +93,7 @@ export default function EmailModal() {
                             ariaLabel="tail-spin-loading"
                             radius="1"
                             wrapperStyle={{}}
-                            wrapperClass=""
+                            wrapperclassName=""
                             visible={true}
                         /> : ''}
                         {postEmailResponse.ok === true && <p className="text-green-600">Email sent successfully!</p>}
