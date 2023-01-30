@@ -336,6 +336,14 @@ filter: drop-shadow(0.5px 0.5px 1px #DBFE87);
   opacity:1; 
 }
 
+.spinner {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* @media (width > 639px) {
 
 .info-container::before {

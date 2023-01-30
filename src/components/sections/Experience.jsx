@@ -2,7 +2,7 @@ import { ThemeContext } from "../ThemeContext.jsx"
 import { useContext, useEffect, useRef, useState } from "react"
 import { useInView } from "react-intersection-observer"
 // import { educationAndTraining, professionalExperience } from "../../data/experienceData.js"
-import { t } from "i18next"
+import { useTranslation } from 'react-i18next';
 
 export default function Experience() {
 
@@ -11,8 +11,12 @@ export default function Experience() {
     const { ref: skillsRef, inView: skillsIsVisible } = useInView({ threshold: 0 });
     const { ref: educationTrainingRef, inView: educationTrainingIsVisible } = useInView({ threshold: 0 });
     const { ref: professionalExperienceRef, inView: professionalExperienceIsVisible } = useInView({ threshold: 0 });
+
+    const { t, i18n, ready } = useTranslation();
+    // if (!ready) return 'loading translations...';
     const educationAndTraining = t('experience.content.educationAndTraining.content', { returnObjects: true });
     const professionalExperience = t('experience.content.professionalExperience.content', { returnObjects: true });
+
 
     useEffect(() => {
         if (experienceIsVisible === true) setSectionActive(t('experience.section_title'))
@@ -29,7 +33,7 @@ export default function Experience() {
                     <div ref={skillsRef} id="Skills" className={skillsIsVisible ? "flex flex-col items-center fade-in mx-auto mt-4 sm:mt-28 md:mt-40 mb-10 h-fit" : "flex flex-col items-center mx-auto mt-4 sm:mt-28 md:mt-40 mb-10 h-fit invisible"}>
                         <h3 className={currentTheme === 'dark' ? "text-3xl md:text-4xl xl:text-5xl font-extrabold font-['Montserrat'] text-[var(--dm-third-color)] drop-shadow-[2px_2px_0_var(--dm-secondary-color)] mb-6"
                             : "text-3xl md:text-4xl xl:text-5xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] mb-6"}>Skills</h3>
-                        <div className="flex sm:gap-x-4 gap-x-2 sm:gap-y-2 items-center justify-center flex-wrap transition-all px-3">
+                        <div className="flex h-fit sm:gap-x-4 gap-x-2 sm:gap-y-2 items-center justify-center flex-wrap transition-all px-3">
                             <div
                                 data-content="HTML 5"
                                 className="skill flex flex-col items-center justify-center text-xs"
@@ -84,6 +88,12 @@ export default function Experience() {
                             ><svg
                                 className={currentTheme === 'dark' ? "lg:w-20 sm:w-16 w-10 text-[var(--dm-secondary-color)]" : "lg:w-20 sm:w-16 w-10 text-[var(--lm-secondary-color)]"}
                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 46.792969 22.089844 L 27.910156 3.207031 C 27.109375 2.402344 26.054688 2 25 2 C 23.945313 2 22.890625 2.402344 22.089844 3.207031 L 18.355469 6.941406 L 22.976563 11.5625 C 24.511719 10.660156 26.511719 10.855469 27.828125 12.171875 C 29.144531 13.488281 29.335938 15.488281 28.433594 17.019531 L 32.976563 21.5625 C 34.511719 20.660156 36.511719 20.855469 37.828125 22.171875 C 39.390625 23.734375 39.390625 26.265625 37.828125 27.828125 C 36.265625 29.390625 33.734375 29.390625 32.171875 27.828125 C 30.855469 26.511719 30.660156 24.511719 31.5625 22.976563 L 27.019531 18.433594 C 26.695313 18.625 26.355469 18.765625 26 18.855469 L 26 31.140625 C 27.722656 31.585938 29 33.136719 29 35 C 29 37.210938 27.210938 39 25 39 C 22.789063 39 21 37.210938 21 35 C 21 33.136719 22.277344 31.585938 24 31.140625 L 24 18.855469 C 23.332031 18.683594 22.695313 18.351563 22.171875 17.828125 C 20.855469 16.511719 20.664063 14.511719 21.566406 12.980469 L 16.941406 8.355469 L 3.207031 22.089844 C 1.597656 23.695313 1.597656 26.304688 3.207031 27.910156 L 22.089844 46.792969 C 22.890625 47.597656 23.945313 48 25 48 C 26.054688 48 27.109375 47.597656 27.910156 46.792969 L 46.792969 27.910156 C 48.402344 26.304688 48.402344 23.695313 46.792969 22.089844 Z" /></svg></div>
+                            <div
+                                data-content="i18next"
+                                className="skill flex flex-col items-center justify-center text-xs"
+                            ><svg
+                                className={currentTheme === 'dark' ? "lg:w-20 sm:w-16 w-10 text-[var(--dm-secondary-color)]" : "lg:w-20 sm:w-16 w-10 text-[var(--lm-secondary-color)]"}
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="50px" height="50px"><path d="M14.93646 2.48699v4.51684l5.0758 13.03647s1.5495 3.1839-2.8824 3.9597H7.01922s-4.13084-.4311-3.14053-3.7019L9.21276 7.00401V2.48699h5.7237Zm2.0894 13.10781c-4.4301-1.3742-8.15457-.6365-9.97498-.0788l-1.83572 4.4186c-.78296 2.499 2.27302 2.9417 2.59687 2.9813l.02755.0032h8.44448c3.5407-.5982 2.511-2.972 2.4147-3.1773l-.0068-.0142-1.6661-4.1328Zm-7.81345.7772c.78905.0004 1.42905.3862 1.42905.8646 0 .4764-.6404.864-1.42905.864-.7887 0-1.42711-.3878-1.42711-.864 0-.4784.6384-.8646 1.4271-.8646Zm5.08375 0c.7871.0004 1.4271.3862 1.4271.8646 0 .4764-.6403.864-1.4271.864-.791 0-1.429-.3878-1.429-.864 0-.4784.638-.8646 1.429-.8646Zm-4.5001-5.2131c-.55227 0-.99993.5395-.99993 1.2051 0 .6656.44766 1.2051.99993 1.2051.5522 0 .9998-.5395.9998-1.2051 0-.6656-.4476-1.2051-.9998-1.2051Zm3.6413-1.29686c-.6549 0-1.1862.63806-1.1862 1.42906 0 .7871.5313 1.4271 1.1862 1.4271.653 0 1.1862-.64 1.1862-1.4271 0-.7907-.5328-1.42906-1.1862-1.42906Zm6.0363-2.73783s-2.1219 1.54591-4.0858-.41975V4.55615s2.7243-.60065 4.0858 2.56806Zm-14.84367 0C5.9908 3.9555 8.71543 4.55615 8.71543 4.55615v2.14831c-1.96566 1.96566-4.08544.41975-4.08544.41975ZM15.04366 0c.4954 0 .8958.4387.8958.98109 0 .54203-.4006.98074-.8958.98074H8.95478c-.49315 0-.89428-.43871-.89428-.98074C8.0605.43871 8.46146 0 8.95478 0h6.08888Z" /></svg></div>
                         </div>
                     </div>
                     <div ref={educationTrainingRef} className={educationTrainingIsVisible ? "fade-in flex flex-col text-center mx-auto lg:w-[80%] mt-16" : "flex flex-col mx-auto lg:w-[80%] mt-16 invisible"} >

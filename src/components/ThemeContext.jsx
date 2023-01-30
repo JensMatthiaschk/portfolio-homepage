@@ -8,6 +8,7 @@ export const ThemeContextProvider = (props) => {
     const [sectionActive, setSectionActive] = useState()
     const [contactVisitedLight, setContactVisitedLight] = useState(0)
     const [contactVisitedDark, setContactVisitedDark] = useState(0)
+    const [loading, setLoading] = useState(false)
 
 
     useEffect(() => {
@@ -27,7 +28,8 @@ export const ThemeContextProvider = (props) => {
             currentTheme, setCurrentTheme,
             sectionActive, setSectionActive,
             contactVisitedLight, setContactVisitedLight,
-            contactVisitedDark, setContactVisitedDark
+            contactVisitedDark, setContactVisitedDark,
+            loading, setLoading
         }}>
             {props.children}
         </ThemeContext.Provider>

@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { ThemeContext } from './ThemeContext';
-import { postEmail } from '../data/emailController';
+import { postEmail } from '../services/emailController';
 import { TailSpin } from 'react-loader-spinner';
 
 export default function EmailModal() {
