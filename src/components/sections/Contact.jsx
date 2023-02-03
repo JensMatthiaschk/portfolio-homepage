@@ -23,13 +23,13 @@ export default function Contact() {
         setDrawingSource('')
         if (currentTheme === 'dark' && drawingIsVisible === true) {
             setSectionActive(t('contact.section_title'))
-            setDrawingSource('images/Drawing_dark_2.gif');
+            setDrawingSource('images/Drawing_dark.gif');
             setPortraitSource('images/PortraitDarkmode.png')
             setCounterDark(prev => prev + 1)
         }
         else if (currentTheme === 'light' && drawingIsVisible === true) {
             setSectionActive(t('contact.section_title'))
-            setDrawingSource('images/Drawing_light_2.gif');
+            setDrawingSource('images/Drawing_light.gif');
             setPortraitSource('images/PortraitLightmode.png')
             setCounterLight(prev => prev + 1)
         }

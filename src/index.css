@@ -8,9 +8,9 @@
   --dm-main-bg-color: hsl(208, 81%, 4%, 100%);
   --dm-secondary-color:#b5a887;
   --dm-secondary-color-alt:#B3A394;
-    --dm-secondary-color-alt-2:hsl(44, 16%, 42%);
-   --dm-third-color: #275e74;
-    --dm-glow-color: hsl(194, 48%, 12%);
+  --dm-secondary-color-alt-2:hsl(44, 16%, 42%);
+  --dm-third-color: #275e74;
+  --dm-glow-color: hsl(194, 48%, 12%);
   --dm-alt-color-1: #C0DDEF;
   --dm-alt-color-2:#429EA6;
   --dm-alt-color-3:#2E86AB;
@@ -23,7 +23,7 @@
 
 /* ColorPalette Light */
   /* --lm-main-bg-color: #B1B2B3; */
-    --lm-main-bg-color: #AEB3B5;
+  --lm-main-bg-color: #AEB3B5;
   --lm-secondary-color: #212121;
   --lm-third-color:#DBFE87;
   --lm-third-color-alt1:#AFFC41;
@@ -36,6 +36,7 @@
 }
 
 body {
+  transition: background 0.5s, color 0.5s;
   background: var(--bkg-color);
   color: var(--text-color);
   font-family: var(--text-main-body);
