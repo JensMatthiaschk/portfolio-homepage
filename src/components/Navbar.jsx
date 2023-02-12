@@ -7,11 +7,10 @@ import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
 
-    const btn = document.querySelector(".btn-toggle");
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     const { currentTheme, setCurrentTheme } = useContext(ThemeContext);
     const { t, i18n } = useTranslation();
 
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
     function handleToggle() {
         if (prefersDarkScheme.matches) {

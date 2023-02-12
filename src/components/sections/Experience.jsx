@@ -1,7 +1,6 @@
 import { ThemeContext } from "../ThemeContext.jsx"
 import { useContext, useEffect, useRef, useState } from "react"
 import { useInView } from "react-intersection-observer"
-// import { educationAndTraining, professionalExperience } from "../../data/experienceData.js"
 import { useTranslation } from 'react-i18next';
 
 export default function Experience() {
@@ -35,13 +34,13 @@ export default function Experience() {
                             : "text-3xl md:text-4xl xl:text-5xl font-extrabold font-['Montserrat'] text-[var(--lm-third-color)] drop-shadow-[2px_2px_0_var(--lm-secondary-color)] mb-6"}>Skills</h3>
                         <div className="flex h-fit sm:gap-x-4 gap-x-2 sm:gap-y-2 items-center justify-center flex-wrap transition-all px-3">
                             <div
-                                data-content="HTML 5"
+                                data-content="HTML5"
                                 className="skill flex flex-col items-center justify-center text-xs"
                             ><svg
                                 className={currentTheme === 'dark' ? "lg:w-20 sm:w-16 w-10 text-[var(--dm-secondary-color)]" : "lg:w-20 sm:w-16 w-10 text-[var(--lm-secondary-color)]"}
                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 30 30" width="58px" height="58px"><path d="M25.428,3.333C25.238,3.121,24.967,3,24.683,3H5.317C5.033,3,4.762,3.121,4.572,3.333c-0.19,0.212-0.28,0.495-0.249,0.777 l2.202,19.823c0.044,0.403,0.329,0.74,0.719,0.851l7.48,2.137c0.09,0.026,0.183,0.039,0.275,0.039s0.185-0.013,0.275-0.039 l7.48-2.137c0.39-0.111,0.674-0.448,0.719-0.851L25.676,4.11C25.708,3.828,25.618,3.545,25.428,3.333z M20.629,10.43h-8.93 l0.212,2.542h8.503l-0.638,7.51L15.003,22l-0.047-0.015l-4.72-1.505L9.978,17.42h2.312l0.101,1.189l2.637,0.581l2.591-0.582 l0.275-3.213h-8.09L9.178,8h11.659L20.629,10.43z" /></svg></div>
                             <div
-                                data-content="CSS 3"
+                                data-content="CSS3"
                                 className="skill flex flex-col items-center justify-center text-xs"
                             ><svg
                                 className={currentTheme === 'dark' ? "lg:w-20 sm:w-16 w-10 text-[var(--dm-secondary-color)]" : "sm:w-16 w-10 text-[var(--lm-secondary-color)]"}

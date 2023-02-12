@@ -11,6 +11,12 @@ export default function EmailModal() {
         message: '',
     });
 
+    const [touched, setTouched] = useState({
+        from_name: false,
+        reply_to: false,
+        message: false,
+    });
+
     const [postEmailResponse, setPostEmailResponse] = useState({})
     const [loading, setLoading] = useState(false)
 
@@ -40,6 +46,8 @@ export default function EmailModal() {
 
     const handleChange = (e) => {
         setToSend({ ...toSend, [e.target.name]: e.target.value });
+        setTouched({ ...touched, [e.target.name]: true })
+        console.log({ toSend, touched })
     };
 
     useEffect(() => {
@@ -60,42 +68,64 @@ export default function EmailModal() {
                         encType='application/x-www-form-urlencoded'
                     >
                         <input
-                            className={currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
+                            className={
+                                currentTheme === 'dark' && touched.from_name === false ? "modal-box input relative w-full bg-stone-700 pl-2 p-1 rounded" :
+                                    currentTheme === 'dark' && touched.from_name === true && toSend.from_name !== '' ? "modal-box input relative w-full bg-stone-700 pl-2 p-1 rounded" :
+                                        currentTheme === 'dark' && touched.from_name === true && toSend.from_name === '' ? "input input-error relative w-full bg-stone-700 pl-2 p-1 rounded"
+                                            : currentTheme === 'light' && touched.from_name === false ? "modal-box input relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded" :
+                                                currentTheme === 'light' && touched.from_name === true && toSend.from_name !== '' ? "modal-box input relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded" :
+                                                    currentTheme === 'light' && touched.from_name === true && toSend.from_name === '' && "input input-bordered input-error relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
                             type='text'
                             name='from_name'
-                            placeholder='Your name'
+                            placeholder='Your name*'
                             value={toSend.from_name}
                             onChange={handleChange}
+                            onClick={handleChange}
+                            required
                         />
                         <input
-                            className={currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
+                            className={
+                                currentTheme === 'dark' && touched.reply_to === false ? "modal-box input relative w-full bg-stone-700 pl-2 p-1 rounded" :
+                                    currentTheme === 'dark' && touched.reply_to === true && toSend.reply_to !== '' ? "modal-box input relative w-full bg-stone-700 pl-2 p-1 rounded" :
+                                        currentTheme === 'dark' && touched.reply_to === true && toSend.reply_to === '' ? "input input-error relative w-full bg-stone-700 pl-2 p-1 rounded" :
+                                            currentTheme === 'light' && touched.reply_to === false ? "modal-box input relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded" :
+                                                currentTheme === 'light' && touched.reply_to === true && toSend.reply_to !== '' ? "modal-box input relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded" :
+                                                    currentTheme === 'light' && touched.reply_to === true && toSend.reply_to === '' && "input input-bordered input-error relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
                             type='email'
                             name='reply_to'
-                            placeholder='Your email'
+                            placeholder='Your email*'
                             value={toSend.reply_to}
                             onChange={handleChange}
+                            onClick={handleChange}
                             required
                         />
                         <textarea
-                            className={currentTheme === 'dark' ? "modal-box relative w-full bg-stone-700 pl-2 p-1 rounded" : "modal-box relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
+                            className={
+                                currentTheme === 'dark' && touched.message === false ? "modal-box textarea relative w-full bg-stone-700 pl-2 p-1 rounded" :
+                                    currentTheme === 'dark' && touched.message === true && toSend.message !== '' ? "modal-box textarea relative w-full bg-stone-700 pl-2 p-1 rounded" :
+                                        currentTheme === 'dark' && touched.message === true && toSend.message === '' ? "textarea textarea-error relative w-full bg-stone-700 pl-2 p-1 rounded" :
+                                            currentTheme === 'light' && touched.message === false ? "modal-box textarea relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded" :
+                                                currentTheme === 'light' && touched.message === true && toSend.message !== '' ? "modal-box textarea relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded" :
+                                                    currentTheme === 'light' && touched.message === true && toSend.message === '' && "textarea textarea-error relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
                             type='text'
                             name='message'
-                            placeholder='Your message'
+                            placeholder='Your message*'
                             rows='10'
                             value={toSend.message}
                             onChange={handleChange}
+                            onClick={handleChange}
+                            required
                         />
-                        <button className="emailFormButton btn btn-sm" type='submit'>Submit</ button >
-                        {loading === true ? <TailSpin
-                            height="1rem"
-                            width="1rem"
+                        <button className="emailFormButton btn btn-sm" type='submit'>{loading === true ? <TailSpin
+                            height="1.5rem"
+                            width="1.5rem"
                             color="currentColor"
                             ariaLabel="tail-spin-loading"
                             radius="1"
                             wrapperStyle={{}}
                             wrapperclassName=""
                             visible={true}
-                        /> : ''}
+                        /> : 'Submit'}</ button >
                         {postEmailResponse.ok === true && <p className="text-green-600">Email sent successfully!</p>}
                         {postEmailResponse.ok === false && <p className="text-red-600">An Error occurred! Email was not sent🥺</p>}
                     </form>

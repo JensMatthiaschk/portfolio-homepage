@@ -80,7 +80,17 @@
                 ],
                 "page_url": "",
                 "repo_url": "https://github.com/JensMatthiaschk/portfolio-homepage"
-            },
+            }
+        ]
+    },
+    "project_button_more": "mehr",
+    "project_button_less": "weniger",
+    "otherProjects_disclaimer": "Da ich mich noch in einer sehr frühen Phase meiner neuen Karriere befinde, ist mein Portfolio noch klein. Dennoch wollte ich einige der neuen Fähigkeiten demonstrieren, die ich bei der Zusammenarbeit mit anderen großartigen neuen Entwicklern im Coding-Bootcamp gelernt und eingesetzt habe.",
+    "otherProjects_button_open": "zeige Sonstige",
+    "otherProjects_button_close": "schließe Sonstige",
+    "otherProjects": {
+        "section_title": "Andere Projekte",
+        "content": [
             {
                 "img_url": "/images/Bici_go.png",
                 "title": "Bici Go!",
@@ -110,17 +120,7 @@
                         "github_url": "https://github.com/Victorfernandezsaez"
                     }
                 ]
-            }
-        ]
-    },
-    "project_button_more": "mehr",
-    "project_button_less": "weniger",
-    "otherProjects_disclaimer": "Da ich mich noch in einer sehr frühen Phase meiner neuen Karriere befinde, ist mein Portfolio noch klein. Dennoch wollte ich einige der neuen Fähigkeiten demonstrieren, die ich bei der Zusammenarbeit mit anderen großartigen neuen Entwicklern im Coding-Bootcamp gelernt und eingesetzt habe.",
-    "otherProjects_button_open": "zeige Sonstige",
-    "otherProjects_button_close": "schließe Sonstige",
-    "otherProjects": {
-        "section_title": "Andere Projekte",
-        "content": [
+            },
             {
                 "img_url": "",
                 "title": "Poke Fight",

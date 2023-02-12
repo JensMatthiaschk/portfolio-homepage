@@ -9,7 +9,6 @@ export default function About() {
     const { currentTheme, setSectionActive } = useContext(ThemeContext)
     const { ref: aboutRef, inView: aboutIsVisible } = useInView({ threshold: 0.5 });
     const { t } = useTranslation();
-    const name = 'Jens Matthiaschk';
 
 
     useEffect(() => {

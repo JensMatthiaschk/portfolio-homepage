@@ -1,7 +1,6 @@
 import { ThemeContext } from "../ThemeContext.jsx"
 import { useContext, useEffect, useState, useRef } from "react"
 import { useInView } from "react-intersection-observer"
-// import { projects, otherProjects } from "../../data/projectsData.js"
 import { useTranslation } from "react-i18next"
 
 
@@ -11,7 +10,6 @@ export default function Projects() {
     const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 });
     const { ref: cardRef, inView: cardIsVisible } = useInView({ threshold: 0 });
     const [otherProjectsVisible, setOtherProjectsVisible] = useState(false);
-    const [openState, setOpenState] = useState(false);
     const { t } = useTranslation();
     const projects = t('projects.content', { returnObjects: true })
     const otherProjects = t('otherProjects.content', { returnObjects: true })
