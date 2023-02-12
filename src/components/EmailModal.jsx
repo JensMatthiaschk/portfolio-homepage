@@ -38,6 +38,11 @@ export default function EmailModal() {
                 reply_to: '',
                 message: '',
             });
+            setToSend({
+                from_name: false,
+                reply_to: false,
+                message: false,
+            });
             // location.reload()
         } catch (error) {
             console.error(error);
@@ -106,7 +111,8 @@ export default function EmailModal() {
                                         currentTheme === 'dark' && touched.message === true && toSend.message === '' ? "textarea textarea-error relative w-full bg-stone-700 pl-2 p-1 rounded" :
                                             currentTheme === 'light' && touched.message === false ? "modal-box textarea relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded" :
                                                 currentTheme === 'light' && touched.message === true && toSend.message !== '' ? "modal-box textarea relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded" :
-                                                    currentTheme === 'light' && touched.message === true && toSend.message === '' && "textarea textarea-error relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"}
+                                                    currentTheme === 'light' && touched.message === true && toSend.message === '' && "textarea textarea-error relative w-full bg-stone-300 text-[var(--lm-secondary-color)] pl-2 p-1 rounded"
+                            }
                             type='text'
                             name='message'
                             placeholder='Your message*'
