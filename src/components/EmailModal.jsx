@@ -38,7 +38,7 @@ export default function EmailModal() {
                 reply_to: '',
                 message: '',
             });
-            setToSend({
+            setTouched({
                 from_name: false,
                 reply_to: false,
                 message: false,
@@ -51,7 +51,8 @@ export default function EmailModal() {
 
     const handleChange = (e) => {
         setToSend({ ...toSend, [e.target.name]: e.target.value });
-        setTouched({ ...touched, [e.target.name]: true })
+        if (!postEmailResponse.ok)
+            setTouched({ ...touched, [e.target.name]: true })
         console.log({ toSend, touched })
     };
 
